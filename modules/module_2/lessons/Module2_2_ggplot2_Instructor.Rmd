@@ -30,11 +30,13 @@ can remind oursevles what the data look like using the `head()`
 function.
 
 ```{r, message = FALSE}
-# load package
+# Load package
 library(tidyverse)
 
-# load data
+# Load data
 sick <- read_csv("../data/sick_data.csv")
+
+# View first few rows
 head(sick)
 ```
 
@@ -42,6 +44,7 @@ Here is code to make a scatter plot of the relationship between percent
 fish in diets and how many trips to the doctor.
 
 ```{r}
+# Scatterplot of % fish diet and # of doctor visits
 ggplot(sick, aes(x = perc_fish, y = doctor_trips)) +
   geom_point() +
   labs(x = "Percent Fish in Diet",
@@ -81,15 +84,15 @@ The typical structure looks like this:
 
 A few things to note:
 
--   we always start with the `ggplot()` function
--   we specify the dataset we want to use
--   we specify the mappings (x- and y-axes and some other bits) with the
+-   We always start with the `ggplot()` function
+-   We specify the dataset we want to use
+-   We specify the mappings (x- and y-axes and some other bits) with the
     `aes()` function
--   we use a `+` to add layers
--   we specify the type of plot, or `geom` using one of many possible
+-   We use a `+` to add layers
+-   We specify the type of plot, or `geom` using one of many possible
     geom functions
--   we use the `labs()` function to clean up the labels
--   we add a `theme` function to make it more visually readable
+-   We use the `labs()` function to clean up the labels
+-   We add a `theme` function to make it more visually readable
 
 Let's iteratively build up to the plot we have made above:
 
@@ -124,10 +127,10 @@ ggplot(data = sick, mapping = aes(x = perc_fish, y = doctor_trips)) +
 ```
 
 5)  Choose a `theme` function to make the plot more aesthetically
-    pleasing.
+    pleasing. My favorites are `theme_bw()`, `theme_classic()`, and
+    `theme_light()`.
 
 ```{r fig.width=4.5, fig.height=3}
-# theme_bw(), theme_classic(), and theme_light() are my favorites
 ggplot(sick, aes(x = perc_fish, y = doctor_trips)) +
   geom_point() +
   labs(x = "Percent Fish in Diet",

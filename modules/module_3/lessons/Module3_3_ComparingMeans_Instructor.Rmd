@@ -14,9 +14,9 @@ knitr::opts_chunk$set(echo = TRUE)
 
 When we are comparing data from two groups, we often want to compare the mean values of the different groups to see if there are differences. We can do this in a number of ways:
 
--   numerically (descriptive statistics)
--   visually
--   statistically (inferential statistics)
+-   Numerically (descriptive statistics)
+-   Visually
+-   Statistically (inferential statistics)
 
 In this course so far, we have done the first 2: by calculating the mean values of groups and by plotting histograms.
 
@@ -25,7 +25,10 @@ Now, we will explore how we compare means a bit more today, adding in the statis
 Let's get set-up by loading the tidyverse and reading in our data.
 
 ```{r}
+# Load library
 library(tidyverse)
+
+# Load data
 collars <- read_csv("collar_data.csv")
 ```
 
@@ -36,6 +39,7 @@ To remind ourselves of which collar maker has the higher signal distance and bat
 Create a new data frame called `means_by_maker`. We want to calculate the average battery life and average signal distance for each collar maker. The new data frame should contain 2 columns, one called `mean_battery` and `mean_signal`.
 
 ```{r}
+# Mean battery life and signal distance, by maker
 means_by_maker <- collars %>% 
   group_by(maker) %>% 
   summarise(mean_battery = mean(battery_life),
@@ -60,7 +64,7 @@ In small groups, work together to develop code that creates the following:
     -   Try running `?geom_abline` to get some insight, or you can use Google to try to figure it out
 
 ```{r}
-# battery life
+# Battery life
 ggplot(collars, aes(battery_life, fill = maker)) +
   geom_histogram(alpha = 0.5, bins = 10, position = "identity") +
   geom_vline(data = means_by_maker, aes(xintercept = mean_battery, color = maker)) +
@@ -72,12 +76,12 @@ ggplot(collars, aes(battery_life, fill = maker)) +
 ```
 
 ```{r}
-# signal distance
+# Signal distance
 ggplot(collars, aes(x=signal_distance, fill = maker)) +
   geom_histogram(alpha = 0.5, bins = 20, position = "identity") +
   geom_vline(data = means_by_maker, 
              aes(xintercept = mean_signal, color = maker)) +
-  labs(x = "Signal Distance",  # using the labs() function produces the same results as above
+  labs(x = "Signal Distance",  # labs() produces the same results as xlab + ylab
        y = "Count",
        color = "Maker",
        fill = "Maker") + 
@@ -95,10 +99,12 @@ A great way to show the mean (or median) value and the distribution of data is w
 Let's build one and then talk through what each component means. We use `geom_boxplot` to make these types of plots.
 
 ```{r}
+# Signal distance
 ggplot(collars, aes(maker, signal_distance, color = maker)) +
   geom_boxplot() + 
   geom_jitter(alpha = 0.5, width = 0.1)
 
+# Battery life
 ggplot(collars, aes(maker, battery_life)) +
   geom_jitter(alpha = 0.5, width = 0.1) +
   geom_boxplot()
@@ -106,9 +112,9 @@ ggplot(collars, aes(maker, battery_life)) +
 
 So what does the box represent? And the whiskers?
 
--   the **box** represents the *middle 50% of the values* in the data set. The line that runs through the middle of the box represents the *middle value (**median**)* of the data
--   the **whiskers** represent the *spread of the data* (we won't get into the mathematical details of exactly how they are calculated) and a roughly comparable to 95% confidence intervals (discussed below)
--   values that fall outside of the whiskers can be considered outliers and are plotted individually
+-   The **box** represents the *middle 50% of the values* in the data set. The line that runs through the middle of the box represents the *middle value (**median**)* of the data
+-   The **whiskers** represent the *spread of the data* (we won't get into the mathematical details of exactly how they are calculated) and a roughly comparable to 95% confidence intervals (discussed below)
+-   Values that fall outside of the whiskers can be considered outliers and are plotted individually
 
 ## Statistically
 
@@ -130,12 +136,12 @@ We want to know if there is a *meaningful* (read: statistical) difference betwee
 
 We can think of the null hypothesis as our starting place--this is our default assumption. The alternative hypothesis is, well, the alternative to the null hypothesis. For example:
 
--   **Null Hypothesis** (*H*~0~): There is no difference between mean values of battery life for the two manufacturers
--   **Alternative Hypothesis** (*H*~A~): There is a different between the mean values of battery life for the two manufacturers
+-   **Null Hypothesis** (*H*~0~): There is *no* difference between mean values of battery life for the two manufacturers
+-   **Alternative Hypothesis** (*H*~A~): There *is* a different between the mean values of battery life for the two manufacturers
 
 So how can we determine whether we should accept or reject the null hypothesis? That's where statistics come in.
 
-*(Note: for reasons I won't go into here, we never accept the alternative hypothesis, we only reject the null hypothesis.)*
+*(Note: For reasons I won't go into here, we never accept the alternative hypothesis, we only reject the null hypothesis.)*
 
 ### Introduction to t-tests
 
@@ -156,8 +162,8 @@ The t-test allows us to determine if the means are different due to the random v
 Let's run some code to perform our first t-test!
 
 ```{r}
+# Wow a t-test!
 t.test(battery_life ~ maker, data = collars)
-
 ```
 
 Thankfully, the code isn't too onerous. Interpreting the results is a different matter, though...
@@ -168,7 +174,7 @@ Let's talk through it:
     -   For us, it is a metric of how different the difference of the two means is from 0.
     -   Big values (can be positive or negative) indicate a big difference from 0 while small values are mean the difference is close to 0.
 -   `df`: stands for *degrees of freedom*
-    -   it's a measure of your sample size and some other stuff---honestly, this is not something we're really going to focus on here
+    -   It's a measure of your sample size and some other stuff --- honestly, this is not something we're really going to focus on here.
 -   `p-value`: a measure of certainty of the difference outlined in the `t-statistic` above
     -   For the test above, our p-value is *very* small: 0.00000000000000022
     -   This means that there is an extremely low probability that obtaining a difference in means of 0 is very, very unlikely (or, another way to think of it--that the probability that the difference in means is due to random variation in our sample alone is very low) There are a lot of benchmarks in different fields for what this value should be below to consider the difference *significant*, typically \< 0.05 is considered significant.
@@ -184,5 +190,6 @@ Let's talk through it:
 Work on your own or in a group to run a t-test on the other variable we are interested in (signal distance). Be able to describe each piece of the output, what it means, and the overall finding for the test. Also be able to relate it back to the values and the figures we generated above.
 
 ```{r}
+# Another t-test, but for signal distance
 t.test(data = collars, signal_distance ~ maker)
 ```

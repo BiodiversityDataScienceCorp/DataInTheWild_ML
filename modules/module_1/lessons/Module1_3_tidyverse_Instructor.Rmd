@@ -1,7 +1,7 @@
 ---
 title: "Module 1, Introduction to the `tidyverse`"
 author: "Keaton Wilson, Ellen Bledsoe"
-date: "12/4/2019, revised August 2022"
+date: "12/4/2019, revised February 2024"
 output: pdf_document
 ---
 
@@ -54,8 +54,10 @@ For future reference, though:
 -   we use the function `install.packages()` to download the package
 
 ```{r install_tidyverse, message = FALSE}
-# download and install the tidyverse package(s)
-# to run the line of code, remove the # in front of the line below and run this chunk
+# Download and install the tidyverse package(s)
+
+# To run the line of code below, remove the # in front of the line below and run this chunk:
+
 # install.packages("tidyverse")
 ```
 
@@ -70,7 +72,7 @@ When you run this code, you'll see a message that says "Attaching packages" and 
     -   If you're curious, though, it is telling us that there are some functions in the `tidyverse` that have the same names as functions that are automatically installed with R and that the `tidyverse` versions of those functions will be the ones that get used by default unless we specify otherwise.
 
 ```{r load_tidyverse, message = FALSE}
-# load the tidyverse (tell RStudio we want to use this package in this session)
+# Load the tidyverse (tell RStudio we want to use this package in this session)
 library(tidyverse)
 ```
 
@@ -79,13 +81,15 @@ library(tidyverse)
 To learn about the `tidyverse` syntax, we're going to use a real data set on climate change from Berkeley, CA, USA. It outlines temperatures in major cities across the world since 1750.
 
 ```{r climate_data}
-# read in the data file
+# Read in the data file
 
-# `read_csv()` is part of the `tidyverse` and gives us nice options when reading in data
+# `read_csv() is part of the `tidyverse`
+# It gives us nice options when reading in data
 climate_df <- read_csv("global_temps.csv")
 
-# Let's take a look at the climate data. 
+# Let's take a look at the climate data
 climate_df
+
 ```
 
 The `tidyverse` converts 2D data into something called a tibble! For our intents and purposes, it is basically the same as a data frame (and I'll probably call it a data frame, in reality).
@@ -93,8 +97,12 @@ The `tidyverse` converts 2D data into something called a tibble! For our intents
 Let's take a look at our tibble (AKA data frame).
 
 ```{r}
-# explore the data set
+# Explore the data set
+
+# First 6 rows
 head(climate_df)
+
+# Last 6 rows
 str(climate_df)
 ```
 
@@ -105,20 +113,29 @@ Let's use our first function, `select()`. Select allows us to pick out specific 
 First, let's remind ourselves how we would accomplish this in base R.
 
 ```{r select_baseR}
-# column selection in base R
-# climate_df$dt
-climate_df[,1:2]
+# Column selection in base R
+# Option 1: climate_df$dt
+
+# Option 2:
+# Select multiple columns, in this case the first two
+climate_df[, 1:2]
 ```
 
 The `select()` function does the same thing but with more power (and, in my opinion, more easily). The first argument in the function is the data frame. Any following arguments are the columns we want to select.
 
 ```{r select_tidy}
-# first argument is the data frame, then the columns
+# First argument is the data frame, then the columns
 select(climate_df, dt)
 
-# multiple columns
+# Multiple columns:
+
+# City and Country
 select(climate_df, dt, City, Country)
+
+# All columns until Country
 select(climate_df, dt:Country)
+
+# All columns except City
 select(climate_df, -City)
 ```
 
@@ -129,6 +146,7 @@ You might have noticed that we haven't put any column names in quotations, unlik
 Write a line of code to select the following data from the `climate_df`: average temperature, latitude and longitude
 
 ```{r}
+# Select three select columns
 select(climate_df, AverageTemperature, Latitude, Longitude)
 ```
 
@@ -139,23 +157,30 @@ It is important to remember that the computer interprets everything literally. W
 `filter()` allows you filter rows by certain conditions. Recall that we did this a bit with base R.
 
 ```{r filter_baseR}
-# base R
+# Base R
+# Select rows where the average temperature was greater than 25
 climate_df[climate_df$AverageTemperature > 25, ]
 ```
 
 The code above is, in my opinion, a bit unwieldy. Filter feels more intuitive. We still need the double equal signs, though!
 
 ```{r filter_tidy}
-# filter
+# Filter same content as above, but with `tidyverse`
 filter(climate_df, AverageTemperature > 25)
 
-# easy to write multiple conditions and to chain stuff together
-filter(climate_df, AverageTemperature > 25, Country == "United States")   # only rows that meet both conditions; could also use & instead of ,
+# It is easy to write multiple conditions and to chain stuff together:
 
-filter(climate_df, AverageTemperature > 25 | Country == "United States" ) # rows that meet one or the other condition; the | symbol means `or`
-filter(climate_df, Country == "United States" | Country == "Mexico")      # pulls rows in which the Country column has either "United States" OR "Mexico"
+# Only rows that meet both conditions; you could also use "&" instead of ","
+filter(climate_df, AverageTemperature > 25, Country == "United States")   
 
-# worth noting here that we haven't saved any of this. We need to write to a new object. 
+# Rows that meet one or the other condition; the "|" symbol means "or"
+filter(climate_df, AverageTemperature > 25 | Country == "United States" ) 
+
+# Pulls rows in which the Country column has either "United States" OR "Mexico"
+filter(climate_df, Country == "United States" | Country == "Mexico")      
+
+# Worth noting here that we haven't saved any of this
+# To do that, we need to write to a new object
 us_df <- filter(climate_df, AverageTemperature > 25)
 ```
 
@@ -168,9 +193,15 @@ Work with the climate data we've been using this class period. Construct a small
 3.  Name this new data frame "cold_paris"
 
 ```{r}
-# not piped
+# Not piped
+
+# (1)
 slim <- select(climate_df, dt, AverageTemperature, City)
+
+# (2)
 filtered <- filter(slim, City == "Paris", AverageTemperature < 22)
+
+# (3)
 cold_paris <- filtered
 ```
 
@@ -186,12 +217,19 @@ This is helpful for a lot of reasons, including:
 The shortcut for typing a pipe is `Ctrl` + `Shift` + `M` (or `Cmd` + `Shift` + `M` on a Mac)
 
 ```{r pipes}
+# Open climate_df %>% 
+# Select City column
+# (Returns City column)
 climate_df %>% 
   select(dt, City)
 
+# (1) Will store results in cold_paris
+# (2) Open climate_df
 cold_paris <- climate_df %>%
-  select(dt, AverageTemperature, City) %>%
-  filter(City == "Paris", AverageTemperature < 22)
+  # (3) Select two columns
+  select(dt, AverageTemperature, City) %>%   
+  # (4) Filter to Paris, then filter data where where avg. temp < 22
+  filter(City == "Paris", AverageTemperature < 22)  
 ```
 
 ### Let's practice!
@@ -203,7 +241,9 @@ In small groups, use pipes to create a new data frame called `warm_nigeria` that
 
 ```{r nigeria30}
 warm_nigeria <- climate_df %>% 
+  # Select columns
   select(AverageTemperature, City, Country) %>% 
+  # Filter
   filter(Country == "Nigeria", AverageTemperature > 30)
 ```
 
@@ -213,12 +253,13 @@ Sometimes our data doesn't have our data in exactly the format we want. For exam
 
 The `tidyverse` has a function called `mutate()` that lets us create a new column. Often, we want to apply a function to the entire column or perform some type of calculation, such as converting temp from F to C.
 
-To help us out, here is the equation for converting: `Fahrenheit = Celcius * (9/5) + 32`
+To help us out, here is the equation for converting: `Fahrenheit = Celsius * (9/5) + 32`
 
 ```{r mutate}
-# create a new column for temps in Fahrenheit
 climate_df %>% 
+  # Select temperature column
   select(dt, AverageTemperature) %>% 
+  # Create a new column for converted temperatures in Fahrenheit
   mutate(AverageTemperature_F = AverageTemperature * (9/5) + 32)
 ```
 
@@ -233,10 +274,10 @@ Fortunately, the `tidyverse` has a handy-dandy function to make this easy to do 
 The `summarize()` function creates a new dataframe with columns and values we give it. Similar to `mutate()`, what is on the left of the `=` is the name of the new column, and what is on the right of the `=` is the value(s) to put in the new column.
 
 ```{r summarize}
-# first attempt at mean and sd of average temperature
 climate_df %>% 
-  summarise(mean_temp = mean(AverageTemperature),
-            sd_temp = sd(AverageTemperature))
+  # Make new data frame with one column containing: 
+  summarise(mean_temp = mean(AverageTemperature),    # average temperature and
+            sd_temp = sd(AverageTemperature))        # the other the sd
 ```
 
 Wait a second! Those are some weird values!
@@ -248,6 +289,7 @@ It is important to note that if any of the values in the column that you are try
 Fortunately, `mean()` and `sd()` and some other functions have an argument to remove the missing values: `na.rm = TRUE`
 
 ```{r summarize_na.rm}
+# Same as above, but with NA values omitted from calculation
 climate_df %>% 
   summarise(mean_temp = mean(AverageTemperature, na.rm = TRUE),
             sd_temp = sd(AverageTemperature, na.rm = TRUE))
@@ -268,9 +310,10 @@ The `group_by()` function lets us do this. It is most often used in combination 
 For example, we can use this method to calculate the mean temperatures of **each** country instead of the overall mean of the entire dataset. In order to do these, we create groups in the data based on the country.
 
 ```{r group_by}
+# Group data by country, then find mean and standard deviation for each
 climate_df %>% 
   group_by(Country) %>% 
-  summarise(mean_temp = mean(AverageTemperature, na.rm = TRUE),
+  summarise(mean_temp = mean(AverageTemperature, na.rm = TRUE), 
             sd_temp = sd(AverageTemperature, na.rm = TRUE))
 ```
 
@@ -279,6 +322,7 @@ climate_df %>%
 Practice using the combination of `group_by()` and `summarize()` to calculate the minimum (`min()`) and maximum (`max()`) average temperatures for each city. Save this data frame as `city_min_max`
 
 ```{r group_by_city}
+# Group data by city, then find minimum and maximum for each
 climate_df %>% 
   group_by(City) %>% 
   summarize(min_temp = min(AverageTemperature, na.rm = TRUE),
@@ -288,6 +332,7 @@ climate_df %>%
 Already accomplished this task? Try to figure out how you can keep the "Country" column in the final data frame. This is trickier than you might think!
 
 ```{r group_by_city_country}
+# Group data by country, then group by city, then find minimum and maximum for each
 climate_df %>% 
   group_by(Country, City) %>% 
   summarize(min_temp = min(AverageTemperature, na.rm = TRUE),

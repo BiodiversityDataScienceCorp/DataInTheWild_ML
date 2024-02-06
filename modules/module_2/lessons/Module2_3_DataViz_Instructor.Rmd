@@ -45,12 +45,12 @@ Still in your groups, open the PDF called "data_viz_matching"
 
 Spend a few minutes seeing if you can match the data descriptions to the types of data visualizations.
 
-Each “dataset” is pulled from the same overall dataset: measurements from 344 individual penguins from different species and on different islands over 3 years. Some datasets created multiple plots.
+Each "dataset" is pulled from the same overall dataset: measurements from 344 individual penguins from different species and on different islands over 3 years. Some datasets created multiple plots.
 
-A.	Penguin body mass and flipper lengths
-B.	Penguin flipper lengths 
-C.	Penguin species and flipper lengths 
-D.	Penguins body mass, species, and flipper lengths
+A.  Penguin body mass and flipper lengths
+B.  Penguin flipper lengths
+C.  Penguin species and flipper lengths
+D.  Penguins body mass, species, and flipper lengths
 
 #### Matches
 
@@ -64,7 +64,7 @@ D.	Penguins body mass, species, and flipper lengths
 
 5.  
 
-6.
+6.  
 
 See the PowerPoint on D2L for full details!
 
@@ -74,9 +74,9 @@ First, read through [this blog post](https://humansofdata.atlan.com/2019/02/dos-
 
 Now that you have some insights, let's critique these figures below. Yes, these are actual figures in the wild...
 
--   what aspects don't work
--   what aspects do work
--   how how you present the data?
+-   What aspects don't work?
+-   What aspects do work?
+-   hHw how you present the data?
 
 Figures:
 
