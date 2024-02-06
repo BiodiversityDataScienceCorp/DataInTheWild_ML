@@ -46,7 +46,7 @@ Let's start working with vectors, or 1-dimensional data, first.
 Run this chunk of code to create a vector of data to use.
 
 ```{r vector}
-# vector with counts of penguins
+# Vector with counts of penguins
 counts <- c(2, 9, 4, 3, 6, 7, 1, 0, 3)
 ```
 
@@ -78,7 +78,10 @@ Remember that quiz we took in class with fun/silly questions about our trip to A
 The following code chunk will read in the data. Be sure to run it before try to answer the questions! A bunch of stuff will pop up, but it should work just fine.
 
 ```{r import_data}
+# load library
 library(tidyverse)
+
+# Load data
 team_data <- read_csv("../data/team_antarctica_responses.csv") %>% drop_na()
 ```
 
@@ -126,7 +129,7 @@ When we have a large data set like this, it is often helpful to summarize the da
 
 9.  Write a line of code that tells us what data class the `good_with_animals` column is.
 
-```{r}
+```{r good_with_animals}
 
 ```
 

@@ -1,92 +1,107 @@
 ---
 title: 'Module 1, Assignment 2: Answer Key'
-author: "Ellen Bledsoe"
-date: "2023-09-05"
+author: "Ellen Bledsoe"     # <- your name here!
+date: "`r Sys.Date()`"      # <- uses the current date when rendered
 output: pdf_document
 ---
-
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
 ```
+
+# Student Answer Key
+
+### This document contains the answers to the assignment without the code that produces it.
+
 ```{r vector}
-# vector with counts of penguins
+# Vector with counts of penguins
 counts <- c(2, 9, 4, 3, 6, 7, 1, 0, 3)
 ```
 
+1.  
 
-1. 
 ```{r data_class}
-# data class for counts
+# Data class for counts
 class(counts)
 ```
 
-2. 
+2.  
+
 ```{r second_value}
-# second value of counts vector
+# Second value of counts vector
 counts[2]
 ```
 
-3. 
+3.  
+
 ```{r avg_penguins}
-# mean number of penguins
+# Mean number of penguins
 mean(counts)
 ```
 
-
 ```{r import_data}
+# Load library
 team_data <- read.csv("../data/team_antarctica_responses.csv")
 ```
 
-4. 
+4.  
+
 ```{r examine_data}
+# First 10 rows of data
 head(team_data, 10)
 ```
 
-5. 
+5.  
+
 ```{r}
+# Parka color for UniqueID 9
 team_data[9, 7]
 ```
 
 6.  
 
 ```{r average_remote_location}
+# Average rating to live in a remote location
 mean(team_data$remote_location)
 ```
 
 7.  
 
 ```{r min_max_distance}
-# minimum distance
+# Minimum distance
 min(team_data$distance_mi)
 
-# maximum distance
+# Maximum distance
 max(team_data$distance_mi)
 ```
 
 8.  
 
 ```{r cooking_skill}
-team_data[team_data$fishing_skill == 1, ]
+# Dataframe with only those with fishing skill rating of 5
+team_data[team_data$fishing_skill == 5, ]
 ```
 
 9.  
 
-```{r}
+```{r good_with_animals}
+# Data class of a column
 class(team_data$good_with_animals)
 ```
 
 10. 
 
 ```{r parka_colors}
+# Average cold tolerance of people with blue parkas
 mean(team_data[team_data$parka_color == "Blue", 4])
 ```
 
-Bonus
+Bonus.
+
 ```{r flag_mascot}
-# UA data frame
+# Data frame for flag mascot votes
 mascot <- team_data$flag_mascot
-# mascot count
+
+# Mascot count
 table(mascot)
 ```
-

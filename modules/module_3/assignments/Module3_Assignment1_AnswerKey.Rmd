@@ -1,35 +1,48 @@
 ---
 title: "Module 3 Assignment 1"
-author: "Ellen Bledsoe"
-date: '2023-03-23'
-output:
-  pdf_document: default
+author: "Ellen Bledsoe"     # <- your name here!
+date: "`r Sys.Date()`"      # <- uses the current date when rendered
+output: pdf_document
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
 ```
 
+# Student Answer Key
+
+### This document contains the answers to the assignment without the code that produces it.
 
 ```{r message = FALSE}
 library(tidyverse)
 turbines <- read_csv("../data/wind_turbines.csv")
 ```
 
+1.  
+
+```{r}
+# a)
+
+# b) 
+```
 
 2.  
 
 ```{r}
+# Mean wind and mean power output
 turbine_summary <- turbines %>% 
   group_by(manufacturer) %>% 
   summarise(mean_wind_speed = mean(wind_speed),
             mean_power = mean(power_output))
+
+# View
 turbine_summary
 ```
 
 3.  
 
 ```{r}
+# Multiple density plot for power output
 ggplot(turbines, aes(power_output, color = manufacturer, fill = manufacturer)) +
   geom_density(alpha = 0.5) +
   geom_vline(data = turbine_summary, aes(xintercept = mean_power, color = manufacturer)) +
@@ -43,6 +56,7 @@ ggplot(turbines, aes(power_output, color = manufacturer, fill = manufacturer)) +
 4.  
 
 ```{r}
+# Box and whisker plot for wind speed
 ggplot(turbines, aes(manufacturer, wind_speed)) +
   geom_boxplot() +
   geom_jitter(width = 0.1, alpha = 0.5) +
@@ -51,15 +65,50 @@ ggplot(turbines, aes(manufacturer, wind_speed)) +
   theme_classic()
 ```
 
+5.  
+
+```{r}
+# Power output --
+
+# Null:
+
+# Alternate:
+
+# Wind speed --
+
+# Null:
+
+# Alternate:
+```
+
+6.  
+
+```{r}
+# Answer:
+```
+
 7.  
 
 ```{r}
+# t-test power output
 t.test(data = turbines, power_output ~ manufacturer)
 ```
 
+8.  
+
+```{r}
+# Answer:
+```
 
 9.  
 
 ```{r}
+# t-test wind speed
 t.test(data = turbines, wind_speed ~ manufacturer)
+```
+
+10. 
+
+```{r}
+# Answer:
 ```

@@ -1,34 +1,54 @@
 ---
-title: "Module 4 Assignment 3"
-author: "Ellen Bledsoe"
-date: "2022-12-02"
+title: "Module 4: Assignment 3"
+author: "Ellen Bledsoe"     # <- your name here!
+date: "`r Sys.Date()`"      # <- uses the current date when rendered
 output: pdf_document
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
 ```
 
-# 
+# Student Answer Key
+
+### This document contains the answers to the assignment without the code that produces it.
+
+1.  
 
 ```{r warning = FALSE, message = FALSE}
+# Load library
 library(tidyverse)
 ```
 
+2.  
+
 ```{r}
+# Load data
 plants <- read_csv("../data/nonvascular_plants.csv")
 ```
 
 3.  
 
 ```{r}
+# Head
 head(plants)
+
+# Tail
 tail(plants)
+```
+
+4.  
+
+```{r}
+# penguin_density_m2:
+
+# percent_plant_cover:
 ```
 
 5.  
 
 ```{r}
+# Scatterplot
 ggplot(plants, aes(penguin_density_m2, percent_plant_cover)) +
   geom_point() +
   geom_smooth(method = "lm") +
@@ -40,25 +60,43 @@ ggplot(plants, aes(penguin_density_m2, percent_plant_cover)) +
 6.  
 
 ```{r}
+# Correlation coefficient
 r <- cor(plants$penguin_density_m2, plants$percent_plant_cover)
+
+# View
 r
+```
+
+```{r}
+# Interpretation:
 ```
 
 7.  
 
 ```{r}
+# R-squared
 r^2
+```
+
+```{r}
+# Answer:
 ```
 
 8.  
 
 ```{r}
+# Linear model + results
 summary(lm(data = plants, percent_plant_cover ~ penguin_density_m2))
+```
+
+```{r}
+# Answer:
 ```
 
 9.  
 
 ```{r}
+# Scatterplot
 ggplot(plants, aes(penguin_density_m2, percent_plant_cover, color = plant_type)) +
   geom_point() +
   geom_smooth(method = "lm") +
@@ -71,5 +109,10 @@ ggplot(plants, aes(penguin_density_m2, percent_plant_cover, color = plant_type))
 10. 
 
 ```{r}
+# Multiple regression + results
 summary(lm(data = plants, percent_plant_cover ~ penguin_density_m2 * plant_type))
+```
+
+```{r}
+# Answer:
 ```

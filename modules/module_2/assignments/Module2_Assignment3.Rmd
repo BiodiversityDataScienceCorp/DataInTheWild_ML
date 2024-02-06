@@ -1,9 +1,8 @@
 ---
 title: "Module 2, Assignment 3"
-author: "Ellen Bledsoe"
-date: "2023-02-23"
-output:
-  pdf_document: default
+author: "Ellen Bledsoe"     # <- your name here!
+date: "`r Sys.Date()`"      # <- uses the current date when rendered
+output: pdf_document
 ---
 
 ```{r setup, include=FALSE}
@@ -59,16 +58,25 @@ penguins <- penguins
 
     Note: the `year` column can be considered continuous or categorical. *For this assignment, we will consider it continuous.*
 
-    *Answer:*
+    ```{r}
+    # Answer:
 
-    -   `species`:
-    -   `island`:
-    -   `bill_length_mm`:
-    -   `bill_depth_mm`:
-    -   `flipper_length`:
-    -   `body_mass_g`:
-    -   `sex`:
-    -   `year`: continuous
+    # species:
+
+    # island:
+
+    # bill_length_mm:
+
+    # bill_depth_mm:
+
+    # flipper_length:
+
+    # body_mass_g:
+
+    # sex:
+
+    # year: continuous
+    ```
 
 ------------------------------------------------------------------------
 
@@ -93,7 +101,9 @@ penguins <- penguins
 
 ```
 
-*Answer:*
+```{r}
+# Description:
+```
 
 4.  Create a multiple density plot. Make sure we can see each density plot (make sure one isn't blocking another)(3 points). Write 1-2 sentences describing what information you can gather from plot.
 
@@ -101,7 +111,9 @@ penguins <- penguins
 
 ```
 
-*Answer:*
+```{r}
+# Description:
+```
 
 5.  Create a box-and-whisker plot. Changing the color of the boxes is optional (if you want to get super fancy, you can change the color based on a different variable). Make sure to add points to the plot. Write 1-2 sentences describing what information you can gather from plot.
 
@@ -109,7 +121,9 @@ penguins <- penguins
 
 ```
 
-*Answer:*
+```{r}
+# Description:
+```
 
 6.  Create a scatter plot. Change the color of the points to create a "grouped" scatter plot. Write 1-2 sentences describing what information you can gather from plot. (4 points)
 
@@ -117,4 +131,6 @@ penguins <- penguins
 
 ```
 
-*Answer:*
+```{r}
+# Description:
+```

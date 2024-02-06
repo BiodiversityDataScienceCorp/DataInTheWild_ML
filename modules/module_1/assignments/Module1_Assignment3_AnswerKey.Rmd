@@ -6,34 +6,75 @@ output: pdf_document
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+```
+
+# Student Answer Key
+
+### This document contains the answers to the assignment without the code that produces it.
+
+1.  
+
+```{r what_is_tidyverse}
+# Answer:
+```
+
+2.  
+
+```{r load_tidyverse}
+# Load library
 library(tidyverse)
+```
+
+3.  
+
+```{r load_data}
+# Load data
 weather <- read_csv("../data/aggregated_station_data.csv")
 ```
 
-5. 
+4.  
 
-```{r paged.print=TRUE}
+```{r rows_columns}
+# Rows:
+
+# Columns:
+```
+
+5.  
+
+```{r above0 paged.print=TRUE}
+# Only temperatures above freezing
 filter(weather, temp > 0)
 ```
 
 6.  
 
 ```{r temp_df}
+# Filter columns to year, day, month, temp, and station_id
 station_temp <- select(weather, year:month, temp, station_id)
+
+# View
 station_temp
 ```
 
 7.  
 
 ```{r tempF}
+# Add new column that converts the temperature column (in C) to F
 station_temp %>% 
   mutate(tempF = temp*(9/5) + 32)
 ```
 
+8.  
+
+```{r pipe}
+# Answer:
+```
+
 9.  
 
-```{r}
+```{r min_temp}
 weather %>% 
   group_by(month) %>% 
   summarise(min_temp = min(temp, na.rm = TRUE))
@@ -42,18 +83,18 @@ weather %>%
 10. 
 
 ```{r mean_jan_temp}
+# Data frame with the mean January temperature for each station
 weather %>% 
   filter(month == 1) %>% 
   group_by(station_id) %>% 
   summarize(mean_temp = mean(temp, na.rm = TRUE))
 ```
 
-## Bonus! (up to 2 points)
+Bonus.
 
 ```{r unique_stations}
-# number of unique stations
+# Number of unique stations
 weather %>% 
   distinct(station_id) %>% 
   count() 
 ```
-

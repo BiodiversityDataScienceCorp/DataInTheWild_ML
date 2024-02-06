@@ -1,8 +1,8 @@
 ---
 title: "Module3: Assignment2"
-author: "Ellen Bledsoe"
-date: "2022-11-03"
-output: html_document
+author: "Ellen Bledsoe"     # <- your name here!
+date: "`r Sys.Date()`"      # <- uses the current date when rendered
+output: pdf_document
 ---
 
 ```{r setup, include=FALSE}
@@ -65,8 +65,17 @@ Early last year, we had our fishers head out into each of the four bays everyday
 
 2.  Write out our two hypotheses for these data.
 
-    **Null Hypothesis** $H_{0}$:\
+    **Null Hypothesis** $H_{0}$:
+
+    ```{r}
+    # Answer:
+    ```
+
     **Alternative Hypothesis** $H_{0}$:
+
+    ```{r}
+    # Answer:
+    ```
 
 ### Numeric
 
@@ -82,8 +91,8 @@ Take a look at the values. Do you think the bays have different amounts of fish 
 
 4.  Plot the fish data using a box-and-whisker plot. It doesn't need to be fancy (no need to fix axis labels and such) but be sure it has the following: Make sure your plot has the following:
 
-    -   data points overlaying the boxes
-    -   the points should be partially transparent and jittered
+    -   Data points overlaying the boxes
+    -   The points should be partially transparent and jittered
 
 ```{r}
 
@@ -93,9 +102,11 @@ Take a look at the values. Do you think the bays have different amounts of fish 
 
 5.  In our data set, which variable is the independent variable? Is it categorical or continuous? Which is the dependent variable and is it categorical or continuous?
 
-    **Independent:**
+    ```{r}
+    # Independent:
 
-    **Dependent:**
+    # Dependent:
+    ```
 
 6.  Run an ANOVA to determine if there is an overall difference in means in the four bays. Save the model as an object called `fish_model`, then display the results of the model using the `summary()` function. Remember, the syntax for the model is: `dependent ~ independent`
 
@@ -113,7 +124,9 @@ Take a look at the values. Do you think the bays have different amounts of fish 
 
     -   Write 2-3 sentences explaining that this result means. How do we interpret this value? What does it mean for our hypotheses?
 
-        *Answers:*
+        ```{r}
+        # Answers:
+        ```
 
 8.  Run some code to compute pairwise comparisons.
 
@@ -123,7 +136,9 @@ Take a look at the values. Do you think the bays have different amounts of fish 
 
 9.  Write 2-3 sentences interpreting the pairwise comparisons. Which pairs of bays are significantly different from each other, if any?
 
-    *Answer:*
+    ```{r}
+    # Answer:
+    ```
 
 ## Seals
 
@@ -133,7 +148,9 @@ Let's do the same for our seal data. The `seals` data frame has data on how many
 
 10. Write out our 2 hypotheses for the seal data.
 
-    *Answer:*
+    ```{r}
+    # Answer:
+    ```
 
 ### Numeric
 
@@ -148,8 +165,8 @@ Take a look at the values. Do you think the bays have different numbers of seals
 ### Visual
 
 12. Plot the seal using a box-and-whisker plot. It doesn't need to be fancy (no need to fix axis labels and such) but be sure it has the following: Make sure your plot has the following:
-    -   data points overlaying the boxes
-    -   the points should be partially transparent and jittered
+    -   Data points overlaying the boxes
+    -   The points should be partially transparent and jittered
 
 ```{r}
 
@@ -172,7 +189,9 @@ Take a look at the values. Do you think the bays have different numbers of seals
     -   Is our p-value higher or lower than our cut-off value of 0.05?
     -   Write 2-3 sentences explaining that this result means. How do we interpret this value? What does it mean for our hypotheses?
 
-    *Answers:*
+    ```{r}
+    # Answers:
+    ```
 
 15. Run some code to compute pairwise comparisons.
 

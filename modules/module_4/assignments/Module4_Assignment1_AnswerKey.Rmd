@@ -1,33 +1,47 @@
 ---
-title: "Module 4 Assignment 1"
-author: "Ellen Bledsoe"
-date: "`r Sys.Date()`"
+title: "Module 4: Assignment 1"
+author: "Ellen Bledsoe"     # <- your name here!
+date: "`r Sys.Date()`"      # <- uses the current date when rendered
 output: pdf_document
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
 ```
 
+# Student Answer Key
+
+### This document contains the answers to the assignment without the code that produces it.
 
 ```{r message = FALSE}
+# Load library
 library("tidyverse")
+
+# Load data
 hairgrass <- read_csv("../data/hairgrass_data.csv")
 ```
-
 
 1.  
 
 ```{r}
+# Mean and standard deviation - phosphorus
 hairgrass %>% 
   summarize(mean_P = mean(p_content), 
             stdev_P = sd(p_content))
 ```
 
-
-3. 
+2.  
 
 ```{r}
+# Independent:
+
+# Dependent:
+```
+
+3.  
+
+```{r}
+# Scatterplot
 ggplot(hairgrass, aes(x = p_content, y = hairgrass_density_m2)) +
   geom_point() +
   labs(x = "Phosphorus Content",
@@ -35,24 +49,47 @@ ggplot(hairgrass, aes(x = p_content, y = hairgrass_density_m2)) +
   theme_classic()
 ```
 
+4.  
+
+```{r}
+# Independent:
+
+# Dependent:
+```
 
 5.  
 
 ```{r}
+# Correlation coefficient
 r <- cor(y = hairgrass$hairgrass_density_m2, x = hairgrass$p_content)
+
+# View
 r
 ```
 
 6.  
 
 ```{r}
+# R-squared
 r^2 
 ```
 
+```{r}
+# Interpretation:
+```
+
+7.  
+
+```{r}
+# Null:
+
+# Alternative:
+```
 
 8.  
 
 ```{r}
+# Scatterplot
 hairgrass %>% 
   ggplot(aes(x = p_content, y = hairgrass_density_m2)) +
   geom_point() +
@@ -62,17 +99,32 @@ hairgrass %>%
   theme_classic()
 ```
 
-9. 
+9.  
 
 ```{r}
+# Linear model
 mod <- lm(hairgrass$hairgrass_density_m2 ~ hairgrass$p_content)
+
+# Results
 summary(mod) 
 ```
 
+10. 
 
+```{r}
+# Answer:
+```
+
+11. 
+
+```{r}
+# Answer:
+```
 
 12. 
+
 ```{r}
+# Scatterplot
 ggplot(hairgrass, aes(x = avg_summer_temp, y = hairgrass_density_m2)) +
   geom_point() +
   labs(x = "Average Summer Temperature (F)",
@@ -80,23 +132,37 @@ ggplot(hairgrass, aes(x = avg_summer_temp, y = hairgrass_density_m2)) +
   theme_bw()
 ```
 
+13. 
+
+```{r}
+# Answer:
+```
 
 14. 
 
 ```{r}
+# Correlation coefficient
 r <- cor(y = hairgrass$hairgrass_density_m2, x = hairgrass$avg_summer_temp)
+
+# View
 r
 ```
 
 15. 
 
 ```{r}
+# Correlation coefficient
 r^2 
 ```
 
+```{r}
+# Interpretation:
+```
 
 16. 
+
 ```{r}
+# Scatterplot
 ggplot(hairgrass, aes(x = avg_summer_temp, y = hairgrass_density_m2)) +
   geom_point() +
   geom_smooth(method = "lm") +
@@ -108,7 +174,15 @@ ggplot(hairgrass, aes(x = avg_summer_temp, y = hairgrass_density_m2)) +
 17. 
 
 ```{r}
+# Linear model
 mod <- lm(hairgrass$hairgrass_density_m2 ~ hairgrass$avg_summer_temp)
+
+# View
 summary(mod) 
 ```
 
+18. 
+
+```{r}
+# Answer:
+```
