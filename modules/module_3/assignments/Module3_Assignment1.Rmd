@@ -46,17 +46,9 @@ Let's load the `tidyverse` and read in the data set. Call the data `turbines`.
 
 1.  Explore the data set, either through the environment or through code. Answer the following questions (2 point):
 
-    a.  How many turbine makers are there?
+    a.  How many turbine makers are there? ***Answer:***
 
-        ```{r}
-        # Answer:
-        ```
-
-    b.  What does each row of data represent?
-
-        ```{r}
-        # Answer:
-        ```
+    b.  What does each row of data represent? ***Answer:***
 
     ```{r}
     # Optional: Only if you want space for coding
@@ -102,35 +94,25 @@ Power Output:
 
 -   **Null Hypothesis** (H~0~):
 
-    ```{r}
-    # Answer:
-    ```
+    ***Answer:***
 
 -   **Alternative Hypothesis** (H~A~):
 
-    ```{r}
-    # Answer:
-    ```
+    ***Answer:***
 
 Wind Speed:
 
 -   **Null Hypothesis** (H~0~):
 
-    ```{r}
-    # Answer:
-    ```
+    ***Answer:***
 
 -   **Alternative Hypothesis** (H~A~):
 
-    ```{r}
-    # Answer:
-    ```
+    ***Answer:***
 
 6.  Based on the mean values in the `turbine_summary` data frame and the plots you've created above, predict the outcome of each t-test that we will run: 1 comparing wind speeds, 1 comparing power outputs (graded for completion, not accuracy). Explain your reasoning (1-2 sentences for each t-test is fine). (2 points)
 
-    ```{r}
-    # Answer:
-    ```
+    ***Answer:***
 
 7.  Perform a t-test on the power output by turbine maker. (1 point)
 
@@ -140,9 +122,7 @@ Wind Speed:
 
 8.  In 2-3 sentences, interpret the output from question 7. Focus on what the p-value is in reference to the cutoff of 0.05, what that means, and whether that means we accept or reject the null hypothesis. (2 points)
 
-    ```{r}
-    # Answer:
-    ```
+    ***Answer:***
 
 9.  Perform another t-test, this time on the wind_speed variable by manufacturer. (1 point)
 
@@ -152,6 +132,4 @@ Wind Speed:
 
 10. In 2-3 sentences, interpret the output from question 9 (focus on the same ideas as question 8). (2 points)
 
-    ```{r}
-    # Answer:
-    ```
+    ***Answer:***

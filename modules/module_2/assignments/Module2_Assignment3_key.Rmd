@@ -2,44 +2,21 @@
 title: "Module 2, Assignment 3"
 author: "Ellen Bledsoe"
 date: "2023-02-23"
-output:
-  pdf_document: default
+output: pdf_document
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-# Assignment Details
+# Instructor Key
 
-### Purpose
-
-The goal of this assignment is to practice choosing the correct types of variables for certain plots and to practice writing code for those plots.
-
-### Task
-
-Write R code which produces the correct plot style.
-
-### Criteria for Success
-
--   Code is within the provided code chunks
--   Code chunks run without errors
--   Code produces the correct result
-    -   Code that produces the correct answer will receive full credit
-    -   Code attempts with logical direction will receive partial credit
--   Written answers address the questions in sufficient detail
-
-### Due Date
-
-March 2 at midnight MST
-
-# Assignment Questions
-
-For this assignment, we are going to be making even *more* plots using `ggplot2`! We are going to go back to our trusty data called `penguins` from the `palmerpenguins` package.
+### This document contains the answers to the assignment WITH the code that produces it.
 
 1.  Load both the `palmerpenguins` package and the `tidyverse` package into the work space. (2 points)
 
     ```{r message = FALSE}
+    # Load library
     library(palmerpenguins)
     library(tidyverse)
     ```
@@ -48,49 +25,39 @@ For this assignment, we are going to be making even *more* plots using `ggplot2`
 
 #### OPTIONAL
 
-When we use data from a data package, it doesn't automatically show up in our environment. Run this code chunk so it does show up in the environment.
-
 ```{r}
+# Add to Environment
 penguins <- penguins
 ```
 
 ------------------------------------------------------------------------
 
-2.  There are 8 columns in the `penguins` data frame. Determine if each variable is continuous or categorical and record your answer below.
+1.  There are 8 columns in the `penguins` data frame. Determine if each variable is continuous or categorical and record your answer below.
 
     Note: the `year` column can be considered continuous or categorical. *For this assignment, we will consider it continuous.*
 
-    *Answer:*
+    ***Answers:***
 
-    -   `species`: categorical
-    -   `island`: categorical
-    -   `bill_length_mm`: continuous
-    -   `bill_depth_mm`: continuous
-    -   `flipper_length`: continuous
-    -   `body_mass_g`: continuous
-    -   `sex`: categorical
-    -   `year`: continuous
+    -   ***species: categorical***
 
-------------------------------------------------------------------------
+    -   ***island: categorical***
 
-### Important Instructions!
+    -   ***bill_length_mm: continuous***
 
-(a) For *all* of the plots below, be sure to add:
+    -   ***bill_depth_mm: continuous***
 
-    -   improved labels for the x-axis, y-axis, and the legend (if present)
-    -   one of the following themes to your code: `theme_bw`, `theme_classic`, or `theme_light`.
+    -   ***flipper_length: continuous***
 
-(b) For each question, you get to choose the variables you use for each plot! Pay attention to which variables are continuous vs. categorical and where they should go in the code to produce the correct type of plot.
+    -   ***body_mass_g: continuous***
 
-(c) Because I'm having you choose your own variables, the examples in the provided Answer Key likely will not match yours (though they might). You should strive to produce a plot that looks *similar in style* to those in the Answer Key, but the number of categories and the actual data points will likely be different.
+    -   ***sex: categorical***
 
-(d) Each plot is worth 3 points. Your interpretation is worth 1 point.
+    -   ***year: continuous***
 
-------------------------------------------------------------------------
-
-3.  Produce a histogram plot (just one, not multiple on the same plot). Write 1-2 sentences describing what information you can gather from plot.
+2.  Produce a histogram plot (just one, not multiple on the same plot). Write 1-2 sentences describing what information you can gather from plot.
 
 ```{r warning=FALSE}
+# Histogram
 ggplot(penguins, aes(bill_depth_mm)) +
   geom_histogram(bins = 20) +
   labs(x = "Descriptive Axis Label",
@@ -98,11 +65,12 @@ ggplot(penguins, aes(bill_depth_mm)) +
   theme_bw()
 ```
 
-*Answer: Dependent on their plot.*
+***Description: Depends on their plot***
 
-4.  Create a multiple density plot. Make sure we can see each density plot (make sure one isn't blocking another)(3 points). Write 1-2 sentences describing what information you can gather from plot.
+4.  Create a multiple density plot. Make sure we can see each density plot (make sure one isn't blocking another) (3 points). Write 1-2 sentences describing what information you can gather from plot.
 
 ```{r}
+# Multiple density plot
 ggplot(penguins, aes(body_mass_g, color = island, fill = island)) +
   geom_density(alpha = 0.5) +
   labs(x = "Descriptive Axis Label",
@@ -114,11 +82,12 @@ ggplot(penguins, aes(body_mass_g, color = island, fill = island)) +
   theme_bw()
 ```
 
-*Answer: Dependent on their plot.*
+***Description: Depends on their plot***
 
 5.  Create a box-and-whisker plot. Changing the color of the boxes is optional (if you want to get super fancy, you can change the color based on a different variable). Make sure to add points to the plot. Write 1-2 sentences describing what information you can gather from plot.
 
 ```{r warning=FALSE}
+# Box and whisker plot
 ggplot(penguins, aes(species, flipper_length_mm, color = species)) +
   geom_boxplot() +
   geom_jitter(alpha = 0.5, width = 0.1) +
@@ -130,11 +99,12 @@ ggplot(penguins, aes(species, flipper_length_mm, color = species)) +
   theme_classic()
 ```
 
-*Answer: Dependent on their plot.*
+***Description: Depends on their plot***
 
 6.  Create a scatter plot. Change the color of the points to create a multiple scatter plot. Write 1-2 sentences describing what information you can gather from plot. (4 points)
 
 ```{r warning=FALSE}
+# Scatterplot
 ggplot(penguins, aes(bill_length_mm, bill_depth_mm, color = island)) +
   geom_point() +
   labs(x = "Descriptive Axis Label",
@@ -144,4 +114,4 @@ ggplot(penguins, aes(bill_length_mm, bill_depth_mm, color = island)) +
   theme_light()
 ```
 
-*Answer: Dependent on their plot.*
+***Description: Depends on their plot***

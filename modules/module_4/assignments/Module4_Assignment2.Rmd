@@ -70,13 +70,9 @@ Our first goal is to determine if there is a relationship between the amount of 
 
 4.  Which of our two variables is dependent and which is independent (hint: re-read the introduction if you're feeling confused). Determine whether each is continuous or categorical. (2 points)
 
-    ```{r}
-    # penguin_density_m2:
+    -   ***penguin_density_m2:***
 
-    # percent_plant_cover:
-    ```
-
-<!-- -->
+    -   ***percent_plant_cover:***
 
 5.  Plot the data (disregard plant type for now) using the appropriate plot from `ggplot2`. Remember to add a line of best fit (and remember to make that line a straight line using the `method = "lm"` argument!). Modify your axes labels and add a theme. (2 points)
 
@@ -90,9 +86,7 @@ Our first goal is to determine if there is a relationship between the amount of 
 
 ```
 
-```{r}
-# Interpretation:
-```
+***Interpretation:***
 
 7.  Calculate R\^2. How much variation does our line of best fit explain (report in %)? (2 points)
 
@@ -100,9 +94,7 @@ Our first goal is to determine if there is a relationship between the amount of 
 
 ```
 
-```{r}
-# Answer:
-```
+***Answer:***
 
 8.  Run a linear regression model for these days and interpret the results. Does it seem like penguin density is a significant driver of plant cover? (3 points)
 
@@ -110,9 +102,7 @@ Our first goal is to determine if there is a relationship between the amount of 
 
 ```
 
-```{r}
-# Answer:
-```
+***Answer:***
 
 ## Multiple Regression and Interaction
 
@@ -136,9 +126,7 @@ Woah, that's quite different! Our interpretation of whether penguin density affe
 
 -   Is the interaction term significant? How do we know?
 
-    ```{r}
-    # Answer:
-    ```
+    ***Answers:***
 
 ------------------------------------------------------------------------
 

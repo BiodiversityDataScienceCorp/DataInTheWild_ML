@@ -65,27 +65,19 @@ First, let's take a look at the data we will be using for the assignment.
 
     a\. What does one row represent? (One tank? One temperature? One treatment? One fish?)
 
-    ```{r}
-    # Answer:
-    ```
+    ***Answer:***
 
     b\. How many tanks of fish were sampled?
 
-    ```{r}
-    # Answer:
-    ```
+    ***Answer:***
 
     c\. How many fish were sampled?
 
-    ```{r}
-    # Answer:
-    ```
+    ***Answer:***
 
     d\. How many different "percent soy protein" levels (treatments) are there? In this assignment, we will treat `perc_soy_protein` as a *categorical* variable, so another way to ask this question is: how many categories of percent soy protein do we have?
 
-    ```{r}
-    # Answer:
-    ```
+    ***Answer:***
 
 ## Our Task
 
@@ -106,15 +98,13 @@ They've also asked that we provide all weights in kilograms instead of grams (th
 
     This question will be grade ***only on completion***, not on whether or not your plan is *correct*. (2 points)
 
-    ```{r}
-    # Task (a):
+    ***Task (a):***
 
-    # Task (b):
+    ***Task (b):***
 
-    # Task (c):
+    ***Task (c):***
 
-    # Task (d):
-    ```
+    ***Task (d):***
 
 ## Execution
 
@@ -191,14 +181,10 @@ As suspected, there doesn't seem to be much of a difference based on tank temper
 
 10. Imagine we had decided to treat `perc_soy_protein` as a continuous variable. What type of plot we have used for task (b)? Would we have been able to complete task (d)? Why or why not? (2 points)
 
-    ```{r}
-    # Answer:
-    ```
+    ***Answer:***
 
 11. Write 3-5 sentences about if and how your predictions and execution differed and what you learned through the process. (3 points)
 
     *Examples of questions to answer: How did your initial prediction of how you expected to accomplish the 4 tasks match up with how we actually went about doing it? Were they similar? Were there common mistakes that you made beforehand? Did you plan a different execution from what we did above that you think would also work?*
 
-    ```{r}
-    # Answer:
-    ```
+    ***Answer:***

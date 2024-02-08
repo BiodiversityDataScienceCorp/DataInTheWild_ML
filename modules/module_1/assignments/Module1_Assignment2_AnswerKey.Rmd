@@ -13,6 +13,8 @@ knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
 
 ### This document contains the answers to the assignment without the code that produces it.
 
+## Vectors
+
 ```{r vector}
 # Vector with counts of penguins
 counts <- c(2, 9, 4, 3, 6, 7, 1, 0, 3)
@@ -43,6 +45,8 @@ mean(counts)
 # Load library
 team_data <- read.csv("../data/team_antarctica_responses.csv")
 ```
+
+## Data Frames
 
 4.  
 
@@ -96,7 +100,7 @@ class(team_data$good_with_animals)
 mean(team_data[team_data$parka_color == "Blue", 4])
 ```
 
-Bonus.
+## Bonus (up to 2 points)!
 
 ```{r flag_mascot}
 # Data frame for flag mascot votes
@@ -104,4 +108,8 @@ mascot <- team_data$flag_mascot
 
 # Mascot count
 table(mascot)
+```
+
+```{r}
+# Answer:
 ```

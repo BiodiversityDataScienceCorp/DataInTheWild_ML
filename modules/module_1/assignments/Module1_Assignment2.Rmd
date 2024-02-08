@@ -114,10 +114,10 @@ When we have a large data set like this, it is often helpful to summarize the da
 7.  What are the minimum and maximum distances that would be traveled by a team member to get to Antarctica? Use the `min()` and `max()` functions.
 
 ```{r min_max_distance}
-# minimum distance
+# Minimum distance
 
 
-# maximum distance
+# Maximum distance
 
 ```
 
@@ -151,11 +151,11 @@ What animal should be on our team flag?
 
 First, create a vector called `mascot` that has only the values from the `flag_mascot` column. Next, use the `table()` function on the `mascot`. This will give you the number of times each option was chosen. According to the results, which animal should be on our team flag?
 
-*Answer:*
-
 ```{r flag_mascot}
 
 ```
+
+***Answer:***
 
 # Turning in Your Assignment
 

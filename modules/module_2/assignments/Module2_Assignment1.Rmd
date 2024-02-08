@@ -58,29 +58,24 @@ First, let's prepare our data.
 
 4.  How many rows does the data frame have? How many columns?
 
-    ```{r}
-    # Answer:
-    ```
+    ***Answer:***
 
 5.  Take a look at the data frame.
 
     -   What does one row (observation) represent (e.g., an individual fish?, all fish of a certain species? all tanks of a certain species? etc.)? (1 point)
 
-    ```{r}
-    # Answer:
-    ```
+        ***Answer:***
 
+    ```{=html}
+    <!-- -->
+    ```
     -   Based on the column names, briefly (just a few words) describe what data is included in each column. (2 points)
 
-    ```{r}
-    # Answer:
-    ```
+        ***Answer:***
 
 6.  Take a look at the columns that have the total number of fish in the tank and the number of sick fish per tank. Determine whether these two columns are continuous or categorical.
 
-    ```{r}
-    # Answer:
-    ```
+    ***Answer:***
 
 7.  Using base R, create a scatter plot. Put the total number of fish on the x-axis and the number of sick fish on the y-axis.
 
@@ -90,9 +85,7 @@ First, let's prepare our data.
 
 8.  Interpret the scatter plot. What is the plot telling you? Is there a positive or negative relationship between the two variables. What does that mean? (2 points)
 
-    ```{r}
-    # Answer:
-    ```
+    ***Answer:***
 
 9.  Create the scatter plot using the proper `geom` function.
 
@@ -118,12 +111,8 @@ Looking at the scatter plots, there seem to be two distinct groups. Let's invest
 
 12. Based on the summary data you've calculated above, do you think the two clumps of data correspond to the two species? Which species seems to be the one that is causing the most problems? (2 points)
 
-    ```{r}
-    # Answer:
-    ```
+    ***Answer:***
 
 13. Do some brainstorming. Based on the plots we've made and the calculations we've done so far, are we *sure* that the two clumps of data we see in the data visualization do, in fact, correlate to the two different species? How could we confirm? How might we include that information in the plot? (2 points)
 
-    ```{r}
-    # Answer:
-    ```
+    ***Answer:***

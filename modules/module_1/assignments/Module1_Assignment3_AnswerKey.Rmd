@@ -75,6 +75,7 @@ station_temp %>%
 9.  
 
 ```{r min_temp}
+# Minimum temperature for each month
 weather %>% 
   group_by(month) %>% 
   summarise(min_temp = min(temp, na.rm = TRUE))
@@ -90,7 +91,7 @@ weather %>%
   summarize(mean_temp = mean(temp, na.rm = TRUE))
 ```
 
-Bonus.
+## Bonus! (up to 2 points)
 
 ```{r unique_stations}
 # Number of unique stations

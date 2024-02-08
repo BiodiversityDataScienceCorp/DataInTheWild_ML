@@ -67,15 +67,11 @@ Early last year, we had our fishers head out into each of the four bays everyday
 
     **Null Hypothesis** $H_{0}$:
 
-    ```{r}
-    # Answer:
-    ```
+    ***Answer:***
 
     **Alternative Hypothesis** $H_{0}$:
 
-    ```{r}
-    # Answer:
-    ```
+    ***Answer:***
 
 ### Numeric
 
@@ -102,11 +98,9 @@ Take a look at the values. Do you think the bays have different amounts of fish 
 
 5.  In our data set, which variable is the independent variable? Is it categorical or continuous? Which is the dependent variable and is it categorical or continuous?
 
-    ```{r}
-    # Independent:
+    ***Independent:***
 
-    # Dependent:
-    ```
+    ***Dependent:***
 
 6.  Run an ANOVA to determine if there is an overall difference in means in the four bays. Save the model as an object called `fish_model`, then display the results of the model using the `summary()` function. Remember, the syntax for the model is: `dependent ~ independent`
 
@@ -124,9 +118,7 @@ Take a look at the values. Do you think the bays have different amounts of fish 
 
     -   Write 2-3 sentences explaining that this result means. How do we interpret this value? What does it mean for our hypotheses?
 
-        ```{r}
-        # Answers:
-        ```
+        ***Answers:***
 
 8.  Run some code to compute pairwise comparisons.
 
@@ -136,9 +128,7 @@ Take a look at the values. Do you think the bays have different amounts of fish 
 
 9.  Write 2-3 sentences interpreting the pairwise comparisons. Which pairs of bays are significantly different from each other, if any?
 
-    ```{r}
-    # Answer:
-    ```
+    ***Answer:***
 
 ## Seals
 
@@ -148,9 +138,7 @@ Let's do the same for our seal data. The `seals` data frame has data on how many
 
 10. Write out our 2 hypotheses for the seal data.
 
-    ```{r}
-    # Answer:
-    ```
+    ***Answer:***
 
 ### Numeric
 
@@ -185,13 +173,14 @@ Take a look at the values. Do you think the bays have different numbers of seals
 14. Interpret the results of the model and answer the following questions (2 points):
 
     -   What is the value of the test statistic?
+
     -   What is our p-value?
+
     -   Is our p-value higher or lower than our cut-off value of 0.05?
+
     -   Write 2-3 sentences explaining that this result means. How do we interpret this value? What does it mean for our hypotheses?
 
-    ```{r}
-    # Answers:
-    ```
+        ***Answers:***
 
 15. Run some code to compute pairwise comparisons.
 
@@ -201,7 +190,7 @@ Take a look at the values. Do you think the bays have different numbers of seals
 
 16. Write 2-3 sentences interpreting the pairwise comparisons. Which pairs of bays are significantly different from each other, if any?
 
-    *Answer:*
+    ***Answer:***
 
 ## Decision-Making
 
@@ -211,4 +200,4 @@ We want to choose two out of four bays to fish in. We want bays that have enough
 
 17. Based on *all* our results, which two bays do you think we should fish? Explain your rationale (2 points)
 
-    *Answer:*
+    ***Answer:***
