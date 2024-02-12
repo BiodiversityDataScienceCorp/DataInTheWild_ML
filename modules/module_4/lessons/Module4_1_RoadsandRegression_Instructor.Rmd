@@ -25,7 +25,7 @@ Based on our results from Assignment 2, it looks like Sulzberger Bay and Hope Ba
 
 Our first order of business is to make sure that we avoid areas with that are well-suited for [Antarctica hair grass](https://oceanwide-expeditions.com/blog/the-plants-of-antarctic) (*Deschamsia antarctica*), one of only two flowering species of plants on the continent.
 
-![](images/hairgrass_indiv.jpeg)
+![](../assets/hairgrass_indiv.jpeg)
 
 We want to know what environmental conditions are associated with hair grass. This way, we can avoid areas where these conditions are met and not destroy precious habitat for the hair grass.
 
@@ -37,7 +37,7 @@ A model is a way for us to take complex systems and break them down into small, 
 
 ## Data
 
-![](images/hairgrass_landscape.jpeg)
+![](../assets/hairgrass_landscape.jpeg)
 
 Knowing that we would soon be building roads, we asked our botanists to collect data for us on key components of the hairgrass' environment. Since it would take too long to sample everywhere hairgrass grows, they collected data from a sample of the hairgrass population.
 
@@ -132,7 +132,7 @@ To understand correlation, R-squared, and linear regression, we first need to ta
 
 The line of best fit aims to minimize the distance between each observation (points) and the line. The distances between each observation and any line are called *residuals* (the dotted gray lines). The line of best fit is the line that has the smallest *residuals*.
 
-![](images/lines.png){width="48%"} ![](images/residuals.jpg){width="48%"}
+![](../assets/lines.png){width="48%"} ![](../assets/residuals.jpg){width="48%"}
 
 We can add a line of best fit to a ggplot by using the `geom_smooth()` function. We need to specify that the method we want should produce a straight line ("linear model").
 
@@ -154,15 +154,15 @@ The correlation coefficient is a number between -1 and 1 that looks at the relat
 
 If all the points fall exactly on the line of best fit, r = 1 or -1. If there is no relationship between the variables, `r` is 0 (or something very close to it).
 
-![](images/coefficient_correlation.jpg)
+![](../assets/coefficient_correlation.jpg)
 
 The greater the magnitude (size) of the correlation coefficient, the stronger the relationship between the two variables.
 
-![](images/correlation.jpg)
+![](../assets/correlation.jpg)
 
 It is also important to recognize that the correlation coefficient has nothing to do with the slope of the line (we use linear regression to assess that!).
 
-![](images/steepness.jpeg)
+![](../assets/steepness.jpeg)
 
 Based on the hairgrass plot we did above, do you expect the correlation coefficient to be positive or negative? For this class, we'll say that any `r` value with 0.1 of 0 means there is no relationship.
 

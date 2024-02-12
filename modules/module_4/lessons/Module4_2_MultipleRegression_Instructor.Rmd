@@ -119,7 +119,7 @@ Let's talk through the visual demonstration below to hopefully get a better unde
 -   The top two panels show examples of no interactive effect. It looks like there is an effect of time of day; in each, drinking coffee in the morning makes tasks take longer. However, the *slopes* between time of day are the same. In the first panel (top left), there also looks to be an impact from the number of cups of coffee.
 -   The bottom four panels demonstrate possible variations of *interactive* effects. Not only does time of day and/or number of cups of coffee impact how long it takes to complete a task, but those independent variable affect how long it takes to complete a task *in different ways*.
 
-![](images/coffee_interaction.jpg)
+![](../assets/coffee_interaction.jpg)
 
 In our example above, an interactive effect between tussocks and year would mean that we think the number of tussocks impacts the number of nests *in different ways* between the two categories (year). Since the slopes between the years don't look very different, we aren't really expecting there to be a significant interaction, but let's check anyway.
 
@@ -150,7 +150,7 @@ Let's explore another example to get a better understanding.
 
 Let's investigate how stone size influences nest numbers. Gentoo penguins build their nests out of stones (they actually court their penguin partner with stones, too)!
 
-![](images/gentoo-penguin-cornell-lab2.jpg)
+![](../assets/gentoo-penguin-cornell-lab2.jpg)
 
 Start by plotting the relationship between stone size and the number of nests.
 

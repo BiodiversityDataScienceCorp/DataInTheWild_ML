@@ -27,7 +27,7 @@ This website is pretty great and goes into a lot of detail about good practices 
 
 In this course, our main take-away from this website is the use of visual cues to communicate data and which ones are better than others.
 
-![](data_viz_cues.jpg)
+![](../assets/data_viz_cues.jpg)
 
 ### Small group activity
 

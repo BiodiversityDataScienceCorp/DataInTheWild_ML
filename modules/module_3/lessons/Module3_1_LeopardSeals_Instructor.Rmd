@@ -21,16 +21,18 @@ diets with some fish that are wild-caught for a while. These fish are
 caught by members of Team Antarctica, but there is quite a bit of risk
 involved.
 
-![](seal2.jpeg)One of the main hazards to these fishing teams are
-[leopard seals](https://en.wikipedia.org/wiki/Leopard_seal). They're
-apex predators in this ecosystem and are quite large, averaging 2.4--3.5
-m (7.9--11.5 ft) in length and 200-600 kilograms (440-1,320 lb) in
-weight. Due to their large size and predatory nature, they can cause
-serious injury, especially when large schools of fish are involved ([a
+![](../assets/seal2.jpeg)
+
+One of the main hazards to these fishing teams are [leopard
+seals](https://en.wikipedia.org/wiki/Leopard_seal). They're apex
+predators in this ecosystem and are quite large, averaging 2.4--3.5 m
+(7.9--11.5 ft) in length and 200-600 kilograms (440-1,320 lb) in weight.
+Due to their large size and predatory nature, they can cause serious
+injury, especially when large schools of fish are involved ([a
 researcher was killed by a leopard seal in Antarctica in
 2003](https://www.theguardian.com/uk/2003/jul/24/science.highereducation)).
 
-![](seal3.jpeg)
+![](../assets/seal3.jpeg)
 
 One way we're working to remove some of this danger is by working with
 data from large mammal researchers. They have been tracking leopard

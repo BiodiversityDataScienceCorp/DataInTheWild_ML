@@ -135,7 +135,7 @@ Let's talk through it:
 
 Let's quickly remind ourselves how p-values work:
 
-![](Explaining-P-values_Composite-with-labels.png)
+![](../assets/Explaining-P-values_Composite-with-labels.png)
 
 Given our very small p-value here, what can we conclude?
 
