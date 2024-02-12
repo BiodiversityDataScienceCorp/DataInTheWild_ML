@@ -52,9 +52,9 @@ In Module 2, we will be focusing exclusively on descriptive statistics and data 
 
 As a quick overview, descriptive statistics often include 3 elements:
 
--   ***distribution*** of the data
--   measures of ***central tendency***: mean, median, and mode
--   measures of ***variation***: range and standard deviation
+-   ***Distribution*** of the data
+-   Measures of ***central tendency***: mean, median, and mode
+-   Measures of ***variation***: range and standard deviation
 
 The slide deck with more information about descriptive statistics is linked on D2L and [here](https://docs.google.com/presentation/d/1pAnGupJqgU5t7YucGwMsbAdusoplY4GcJMdOWCic4hs/edit?usp=sharing).
 

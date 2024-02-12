@@ -60,7 +60,7 @@ Wait a second! Take a look back at the data. There is a "number of fish" column,
 
 We should probably take into account how many fish there are in the tank to begin with. 12 sick fish out of 50 is probably a bigger deal than 12 sick fish out of 100!
 
-What we need to do is calculate a density of fish--number of sick fish / number of total fish.
+What we need to do is calculate a density of fish --- number of sick fish / number of total fish.
 
 ```{r}
 # Take into account the number of fish in the tank: 

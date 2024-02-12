@@ -60,7 +60,8 @@ can tie it to a particular manufacturer.
 
 ## The Data
 
-Our data on collars is in a file called "collar_data.csv."
+Our data on collars is in a file called "collar_data.csv." Read in this
+data and our tidyverse.
 
 ```{r message = FALSE}
 # Load library
@@ -240,5 +241,5 @@ relationship between signal distance and battery life? What is it
 telling us about that relationship between the two collar makers?
 
 As it turns out, this trade-off between signal distance and battery
-lenght is very real when it comes to wildlife tracking! Why do you think
+length is very real when it comes to wildlife tracking! Why do you think
 that is?

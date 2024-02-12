@@ -39,8 +39,8 @@ These two aspects above might sound familiar, because they also need to be true 
 
 Like t-tests, ANOVAs are another example of statistical hypothesis testing. We always want to formulate a null hypothesis and an alternative hypothesis. The generic version of these for any ANOVA are:
 
-**Null Hypothesis** ($H_{0}$): The means of the populations we sampled from are all equal.\
-**Alternative Hypothesis** ($H_{A}$): The means of the populations we sampled from differ from each other.
+**Null Hypothesis** ($H_{0}$): \
+**Alternative Hypothesis** ($H_{A}$):
 
 ## Let's Run an Example
 
@@ -64,17 +64,19 @@ What questions are we trying to answer about these collars?
 
 -   Which variable is the independent variable? What about the dependent variable?
 
-Let's write out our two hypotheses.
+Let's write out our hypotheses.
 
 First, for battery life:
 
-**Null hypothesis**: 
-**Alternative hypothesis**: 
+-   **Null hypothesis**:
+
+-   **Alternative hypothesis**:
 
 Next, for signal distance:
 
-**Null hypothesis**: 
-**Alternative hypothesis**: 
+-   **Null hypothesis**:
+
+-   **Alternative hypothesis**:
 
 ### Numeric
 
@@ -106,16 +108,14 @@ Let's do a different type of visualization for signal distance. What type of dat
 
 Based on the numbers and your visualizations, what is your prediction? Are the 3 groups different *enough*, whatever that means?
 
-Finished these sections already? Take a look around and see if you can help a neighbor.
-
 ### Statistic
 
 Now that we have explored the data numerically and visually, let's interrogate the data statistically.
 
 To run an ANOVA, we use the `aov()` function. Some helpful tips about the `aov()` function:
 
--   unlike the `t.test()` function, the initial output for the `aov()` function isn't particularly helpful. We will want to save it to an object and then look at it using the `summary()` function
--   like `t.test()`, the syntax for `aov()` is `dependent ~ independent`.
+-   Unlike the `t.test()` function, the initial output for the `aov()` function isn't particularly helpful. We will want to save it to an object and then look at it using the `summary()` function.
+-   Like `t.test()`, the syntax for `aov()` is `dependent ~ independent`.
 
 First, let's run an ANOVA on the battery life variable.
 
@@ -127,7 +127,7 @@ For us, our main focus here in the ANOVA summary is on the `maker` row. We can i
 
 We want to pay attention to the following:
 
--   `F-value`: this is our test statistic. It determines our `p-value` (you don't need to know how)
+-   `F-value`: this is our test statistic. It determines our `p-value` (you don't need to know how).
 -   `Pr(>F)`: this is our `p-value`, which has roughly the same meaning as with a t-test.
     -   We want to know if this value is larger or smaller than our cut-off value. We will stick with 0.05.
     -   The notation here, `Pr(>F)`, is saying "What is the probability of us getting an F-value larger than the one we have by change alone?" If that probability is less that 0.05 (or 5%), then we reject the null hypothesis that the means are the same.
@@ -164,7 +164,7 @@ What do these different columns represent?
 
 How should we interpret these results?
 
--   Are Collarium and Bugdet significantly different in battery life?
+-   Are Collarium and Budget significantly different in battery life?
 -   Are Darn Tuff and Budget significantly different in battery life?
 -   Are Darn Tuff and Collarium significantly different in battery life?
 

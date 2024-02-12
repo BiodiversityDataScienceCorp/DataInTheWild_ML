@@ -47,8 +47,8 @@ Let's load in the `tidyverse` and the data we're working.
 
 First, let's explore our data. We want to focus on 2 things here:
 
-(1) the columns: which ones match columns in other datasets
-(2) collar identity: which datasets have matching collars or new collars
+(1) The columns: Which ones match columns in other datasets?
+(2) Collar identity: Which datasets have matching collars or new collars?
 
 ```{r}
 
@@ -58,9 +58,9 @@ First, let's explore our data. We want to focus on 2 things here:
 
 In small groups, talk through the process of combining these three datasets. Think about the following:
 
--   which columns match and which ones don't?
--   which rows match and which ones don't?
--   does the order in which we combine datasets matter?
+-   Which columns match and which ones don't?
+-   Which rows match and which ones don't?
+-   Does the order in which we combine datasets matter?
 
 Draw out a diagram that represents how this process might go.
 
@@ -80,7 +80,7 @@ In the following diagram, the two example data frames have the column `x1` in co
 
 This can happen a couple ways, depending on which data frame is the reference and how much data you want to retain.
 
-![](joins.png){width="50%"}
+![](../assets/joins.png){width="50%"}
 
 ### Binds
 
@@ -88,7 +88,7 @@ The other way we can combine data sets in through binds. Binds act similarly to 
 
 They don't match up data based on unique identifiers; instead they match up data by column name (`bind_rows`) or row position (`bind_cols`)
 
-![](binds.png){width="50%"}
+![](../assets/binds.png){width="50%"}
 
 How should we go about combining our three datasets? Come up with a plan that you think will work.
 
@@ -99,7 +99,6 @@ How should we go about combining our three datasets? Come up with a plan that yo
 Our first step in to merge the old collar data with the new data about those old collars.
 
 ```{r}
-
 
 ```
 

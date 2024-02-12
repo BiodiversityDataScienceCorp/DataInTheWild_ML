@@ -312,5 +312,3 @@ nrow(plants)
 # List of column or object names
 names(plants) 
 ```
-
-# 

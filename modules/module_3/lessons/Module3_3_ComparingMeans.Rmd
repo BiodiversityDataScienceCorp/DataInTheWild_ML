@@ -14,9 +14,9 @@ knitr::opts_chunk$set(echo = TRUE)
 
 When we are comparing data from two groups, we often want to compare the mean values of the different groups to see if there are differences. We can do this in a number of ways:
 
--   numerically
--   visually
--   statistically
+-   Numerically (descriptive statistics)
+-   Visually
+-   Statistically (inferential statistics)
 
 In this course so far, we have done the first 2: by calculating the mean values of groups and by plotting histograms.
 
@@ -56,16 +56,38 @@ In small groups, work together to develop code that creates the following:
     -   Try running `?geom_abline` to get some insight, or you can use Google to try to figure it out
 
 ```{r}
-# battery life
+# Battery life
+
 ```
 
 ```{r}
-# signal distance
+# Signal distance
+
 ```
 
 ### Other Plots?
 
 What other ways could we plot this data?
+
+### Box-and-Whisker Plots
+
+A great way to show the mean (or median) value and the distribution of data is with bow-and-whisker plots.
+
+Let's build one and then talk through what each component means. We use `geom_boxplot` to make these types of plots.
+
+```{r}
+# Signal distance
+
+
+# Battery life
+
+```
+
+So what does the box represent? And the whiskers?
+
+-   The **box** represents the *middle 50% of the values* in the data set. The line that runs through the middle of the box represents the *middle value (**median**)* of the data
+-   The **whiskers** represent the *spread of the data* (we won't get into the mathematical details of exactly how they are calculated) and a roughly comparable to 95% confidence intervals (discussed below)
+-   Values that fall outside of the whiskers can be considered outliers and are plotted individually
 
 ## Statistically
 
@@ -87,12 +109,12 @@ We want to know if there is a *meaningful* (read: statistical) difference betwee
 
 We can think of the null hypothesis as our starting place--this is our default assumption. The alternative hypothesis is, well, the alternative to the null hypothesis. For example:
 
--   **Null Hypothesis** (*H*~0~): There is no difference between mean values of battery life for the two manufacturers
--   **Alternative Hypothesis** (*H*~A~): There is a different between the mean values of battery life for the two manufacturers
+-   **Null Hypothesis** (*H*~0~):
+-   **Alternative Hypothesis** (*H*~A~):
 
 So how can we determine whether we should accept or reject the null hypothesis? That's where statistics come in.
 
-*(Note: for reasons I won't go into here, we never accept the alternative hypothesis, we only reject the null hypothesis.)*
+*(Note: For reasons I won't go into here, we never accept the alternative hypothesis, we only reject the null hypothesis.)*
 
 ### Introduction to t-tests
 
@@ -124,7 +146,7 @@ Let's talk through it:
     -   For us, it is a metric of how different the difference of the two means is from 0.
     -   Big values (can be positive or negative) indicate a big difference from 0 while small values are mean the difference is close to 0.
 -   `df`: stands for *degrees of freedom*
-    -   it's a measure of your sample size and some other stuff---honestly, this is not something we're really going to focus on here
+    -   It's a measure of your sample size and some other stuff --- honestly, this is not something we're really going to focus on here.
 -   `p-value`: a measure of certainty of the difference outlined in the `t-statistic` above
     -   For the test above, our p-value is *very* small: 0.00000000000000022
     -   This means that there is an extremely low probability that obtaining a difference in means of 0 is very, very unlikely (or, another way to think of it--that the probability that the difference in means is due to random variation in our sample alone is very low) There are a lot of benchmarks in different fields for what this value should be below to consider the difference *significant*, typically \< 0.05 is considered significant.

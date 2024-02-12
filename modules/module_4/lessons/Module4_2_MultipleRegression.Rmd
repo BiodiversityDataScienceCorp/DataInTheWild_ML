@@ -21,13 +21,18 @@ Let's use some penguins nesting site data to demonstrate.
 
 As usual, we want to load our packages and our data before we begin.
 
-```{r}
+```{r message = FALSE}
+# Load library
 library(tidyverse)
-site_data <- read_csv("site_changes.csv") %>% 
-  mutate(year = as.factor(year)) # don't worry about this code too much--we want the year column treated as a category, not a number
+
+# Load data
+site_data <- read_csv("../data/site_changes.csv") %>% 
+  mutate(year = as.factor(year)) # don't worry about this line too much
+
+# We just want the year column treated as a category, not a number
 ```
 
-We want to understand what factors influence penguin nesting---we wouldn't want to build our road through important penguin nesting territories!
+We want to understand what factors influence penguin nesting --- we wouldn't want to build our road through important penguin nesting territories!
 
 Let's quickly take a look at the data we have.
 
@@ -78,12 +83,12 @@ The way we add an independent variable is with a `+` in the equation.
 We have a bunch of estimates now! Don't worry, I won't be asking you to put them into an equation :) We are only focusing on significance values.
 
 -   `tussocks`: the p-value for the tussocks row (p = 0.7) shows whether the number of tussocks is a significant driver of nest numbers (it isn't!)
--   `year2011`: this p-value is significant (p = 4.69e-05)---year does seem to impact how many nests there are
+-   `year2011`: this p-value is significant (p = 4.69e-05) --- year does seem to impact how many nests there are
     -   (you don't need to know this, but if you are curious...): the reason this says `year2011` and not just `year` is because year is acting as a category, and we can get different coefficient estimates for year. The first option in the categorical variable (1971, in this case) is incorporated into the current intercept estimate, so `year2011` indicates the difference from the original.
 
 ### Interactions
 
-Sometimes, we might expect that there will be in interactive effect between the two independent variables we are including in our model.This means that the combinations of independent variables impact the dependent variable in different ways.
+Sometimes, we might expect that there will be in interactive effect between the two independent variables we are including in our model. This means that the combinations of independent variables impact the dependent variable in different ways.
 
 We can typically spot interactive effects in a plot when the slopes of the regression lines differ from each other a lot.
 
@@ -92,7 +97,7 @@ Let's talk through the visual demonstration below to hopefully get a better unde
 -   The top two panels show examples of no interactive effect. It looks like there is an effect of time of day; in each, drinking coffee in the morning makes tasks take longer. However, the *slopes* between time of day are the same. In the first panel (top left), there also looks to be an impact from the number of cups of coffee.
 -   The bottom four panels demonstrate possible variations of *interactive* effects. Not only does time of day and/or number of cups of coffee impact how long it takes to complete a task, but those independent variable affect how long it takes to complete a task *in different ways*.
 
-![](images/coffee_interaction.jpg)
+![](../assets/coffee_interaction.jpg)
 
 In our example above, an interactive effect between tussocks and year would mean that we think the number of tussocks impacts the number of nests *in different ways* between the two categories (year). Since the slopes between the years don't look very different, we aren't really expecting there to be a significant interaction, but let's check anyway.
 
@@ -119,7 +124,7 @@ Let's explore another example to get a better understanding.
 
 Let's investigate how stone size influences nest numbers. Gentoo penguins build their nests out of stones (they actually court their penguin partner with stones, too)!
 
-![](images/gentoo-penguin-cornell-lab2.jpg)
+![](../assets/gentoo-penguin-cornell-lab2.jpg)
 
 Start by plotting the relationship between stone size and the number of nests.
 

@@ -173,7 +173,7 @@ set.seed(411)
 # Training the model and finding the best k value
 knn_training_model <- train(maker ~ ., data = training, method = "knn")
 
-# view results and find that the best k value is 5
+# View results and find that the best k value is 5
 knn_training_model
 ```
 
@@ -197,7 +197,7 @@ We will apply the same model but now to the new data.
 # Making predictions for the collars without makers
 knn_predict <- predict(knn_training_model, collars_to_label)
 
-# view results
+# View results
 knn_predict
 
 # As a table
