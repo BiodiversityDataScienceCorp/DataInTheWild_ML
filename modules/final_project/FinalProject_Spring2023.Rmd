@@ -54,6 +54,7 @@ We are going to use the `palmerpenguins` R package and data set, which we've use
 I've gone ahead and included the code to load the two packages you will need to successfully complete this project: the `tidyverse` and `palmerpenguins`. Be sure to run this code chunk!
 
 ```{r}
+# Load libraries
 library(tidyverse)
 library(palmerpenguins)
 ```
@@ -62,15 +63,16 @@ library(palmerpenguins)
 
 I've also included one more code chunk below. Be sure to run this code chunk, as well! It does two key things:
 
--   first, it add the `penguins` data frame to your environment, which I imagine you will find helpful
--   second, it removes all rows that have any NA values, which will make completing this assignment a bit easier.
+-   First, it add the `penguins` data frame to your environment, which I imagine you will find helpful
+-   Second, it removes all rows that have any NA values, which will make completing this assignment a bit easier.
 
 Once you've run this line of code, you should see the `penguins` data frame pop up in your environment with 333 observations (rows) and 8 variables (columns).
 
 ```{r}
+# Modify data
 penguins <- penguins %>% 
-  drop_na() %>%                  # remove any rows that have NA in them
-  mutate(year = as.factor(year)) # treat the year column as categorical
+  drop_na() %>%                  # Remove any rows that have NA in them
+  mutate(year = as.factor(year)) # Treat the year column as categorical
 ```
 
 ## Structure & Guidelines
@@ -79,7 +81,7 @@ Like the practice version, this final project is structured as 3 different probl
 
 ### Data
 
-|  Island   |  Species  |
+| *Island*  | *Species* |
 |:---------:|:---------:|
 |  Biscoe   |  Adelie   |
 |  Biscoe   |  Gentoo   |
@@ -100,11 +102,11 @@ The following information about the dataset will likely prove helpful for you as
 
 When I ask you to interpret statistical results, you should roughly follow these guidelines.
 
--   the cut-off for our p-values is always 0.05
--   report the p-value that we are focused on
--   if there are multiple p-values of interest, report all of them
--   state whether the p-value indicates a significant difference/relationship
--   if applicable, state whether we should or should not reject the null hypothesis
+-   The cut-off for our p-values is always 0.05
+-   Report the p-value that we are focused on
+-   If there are multiple p-values of interest, report all of them
+-   State whether the p-value indicates a significant difference/relationship
+-   If applicable, state whether we should or should not reject the null hypothesis
 
 ### Plotting
 
@@ -112,10 +114,10 @@ All plots should be made using `ggplot2`.
 
 You options for plot types to choose from are:
 
--   histogram (use transparency (`alpha`) and `position = "identity"` with multiple groups to see the full distributions)
--   density (use transparency (`alpha`) with multiple groups to see the full distributions)
--   box-and-whisker (adding points on top is encouraged but not required)
--   scatter plot
+-   Histogram (use transparency (`alpha`) and `position = "identity"` with multiple groups to see the full distributions)
+-   Density (use transparency (`alpha`) with multiple groups to see the full distributions)
+-   Box-and-whisker (adding points on top is encouraged but not required)
+-   Scatter plot
 
 **Note: All plots should have modified axis labels and legend labels.**
 
@@ -123,7 +125,7 @@ In many cases, this might mean capitalizing the axis label or legend label. In o
 
 ------------------------------------------------------------------------
 
-## Problem Set 2: ANOVA (15 points)
+## Problem Set 1: ANOVA (15 points)
 
 Take a look at the data and decide what subset (if any) data you want to use to run a ANOVA. There are many possible combinations.
 
@@ -136,8 +138,8 @@ Take a look at the data and decide what subset (if any) data you want to use to 
 ```
 
 2.  Which of our variables would be considered *independent* and which one *dependent*? Also determine whether each is *continuous* or *categorical*. (4 points)
-    -   **island**:
-    -   **bill length**:
+    -   **Island**:
+    -   **Bill length**:
 
 Now that we have an idea numerically of the differences between the islands, let's plot the differences.
 
@@ -149,8 +151,9 @@ Now that we have an idea numerically of the differences between the islands, let
 
 4.  Write the correct pair of statistical hypotheses for our question. (2 points)
 
-    **Null**:\
-    **Alternative**:
+    -   ***Null:***
+
+    -   ***Alternative:***
 
 5.  Run the appropriate statistical analysis for our question. (2 points)
 
@@ -160,15 +163,15 @@ Now that we have an idea numerically of the differences between the islands, let
 
 6.  Interpret the results of this test. (3 points)
 
-    -   is there a significant difference?
-    -   what does that significant difference mean?
-    -   should we reject the null hypothesis?
+    -   Is there a significant difference?
+    -   What does that significant difference mean?
+    -   Should we reject the null hypothesis?
 
-    *Answer:*
+    ***Answer:***
 
 7.  Should we run pairwise comparisons? If no, explain why not. If yes, do so and interpret the results. (3 points)
 
-    *Answer:*
+    ***Answer:***
 
 ```{r}
 
@@ -177,8 +180,6 @@ Now that we have an idea numerically of the differences between the islands, let
 ------------------------------------------------------------------------
 
 ## Problem Set 2 (20 points)
-
-### 
 
 #### Question: Is there a significant relationship between bill length and bill depth for penguins on Biscoe Island?
 
@@ -208,7 +209,7 @@ For now, ignore species. We will address that later in the problem set.
 
 3.  Calculate the correlation coefficient, `r`. What does this value tell us about the relationship (positive, negative, no relationship)? (2 points)
 
-    *Answer:*
+    ***Answer:***
 
 ```{r}
 
@@ -216,7 +217,7 @@ For now, ignore species. We will address that later in the problem set.
 
 4.  Calculate the `r^2` value. How much variation is explained by the line of best fit? Remember, this number is typically expressed as a percent (x 100). (2 points)
 
-    *Answer:*
+    ***Answer:***
 
 ```{r}
 
@@ -228,7 +229,7 @@ For now, ignore species. We will address that later in the problem set.
     -   What is the p-value? (1 point)
     -   Is there a significant relationship? (1 point)
 
-    *Answer:*
+    ***Answer:***
 
 ```{r}
 
@@ -250,13 +251,13 @@ When we look at the plot of the data, it looks like there might be two different
 
 8.  Interpret the results of the test above. Is species significant? Is there a significant interaction between bill length and species? (2 points)
 
-    *Answer:*
+    ***Answer:***
 
 9.  Write 2-3 sentences discussing if and/or how adding species into our linear model changes our interpretation of the data. Did the type of relationship change? Do the two linear models tell us different things? (3 points)
 
-    *Answer:*
+    ***Answer:***
 
----- 
+------------------------------------------------------------------------
 
 ## Problem Set 3 (20 points)
 
@@ -264,8 +265,8 @@ When we look at the plot of the data, it looks like there might be two different
 
 In order to address this question, our first step is to create a new column in our data frame that tells us whether each penguin has a long flipper or a short flipper.
 
--   flippers are considered "long" if they are at least 200 mm in length (\>= 200)
--   flippers are considered "short" if they are less than 200 mm (\< 200)
+-   Flippers are considered "long" if they are at least 200 mm in length (\>= 200)
+-   Flippers are considered "short" if they are less than 200 mm (\< 200)
 
 1.  Using the `mutate()` and `if_else()` functions, create a new column called `long_or_short` with the correct term ("long" or "short") for each flipper length. Be sure to save this in a new data frame called `flippers`. (3 points)
 
@@ -287,8 +288,8 @@ Ok, we have summarized the body mass data for our two groups, and it looks like 
 
 3.  Determine which variable is dependent and which is independent. Also determine if each variable is continuous or categorical. (4 points)
 
--   **body mass**:
--   **flipper group (`long_or_short`)**:
+-   **Body mass**:
+-   **Flipper group (`long_or_short`)**:
 
 Let's plot the body mass data for the two groups.
 
@@ -300,8 +301,9 @@ Let's plot the body mass data for the two groups.
 
 5.  Write the pair of statistical hypotheses for our question. (2 points)
 
-    **Null**:\
-    **Alternative**:
+    -   ***Null:***
+
+    -   ***Alternative:***
 
 6.  Perform the appropriate analysis to compare the body mass means of our two groups: long and short. (2 points)
 
@@ -311,15 +313,15 @@ Let's plot the body mass data for the two groups.
 
 7.  Interpret the results of this test. (3 points)
 
-    -   is there a significant difference?
-    -   what does that significant difference mean?
-    -   should we reject the null hypothesis?
+    -   Is there a significant difference?
+    -   What does that significant difference mean?
+    -   Should we reject the null hypothesis?
 
-    *Answer:*
+    ***Answer:***
 
 8.  Should we run pairwise comparisons? If no, explain why not. If yes, do so and interpret the results. (2 points)
 
-    *Answer:*
+    ***Answer:***
 
 ```{r}
 
