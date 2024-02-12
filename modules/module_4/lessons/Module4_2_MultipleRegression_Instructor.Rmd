@@ -22,18 +22,25 @@ Let's use some penguins nesting site data to demonstrate.
 As usual, we want to load our packages and our data before we begin.
 
 ```{r message = FALSE}
+# Load library
 library(tidyverse)
+
+# Load data
 site_data <- read_csv("../data/site_changes.csv") %>% 
-  mutate(year = as.factor(year)) # don't worry about this code too much
-# we want the year column treated as a category, not a number
+  mutate(year = as.factor(year)) # don't worry about this line too much
+
+# We just want the year column treated as a category, not a number
 ```
 
-We want to understand what factors influence penguin nesting---we wouldn't want to build our road through important penguin nesting territories!
+We want to understand what factors influence penguin nesting --- we wouldn't want to build our road through important penguin nesting territories!
 
 Let's quickly take a look at the data we have.
 
 ```{r}
+# View first few rows
 head(site_data)
+
+# View last few rows
 tail(site_data)
 ```
 
@@ -46,6 +53,7 @@ Let's start with looking at how the number of grass tussocks affects nest number
 Let's start by plotting our tussocks data and run a model.
 
 ```{r}
+# Scatterplot
 ggplot(site_data, aes(x = tussocks, y = num_nests)) +
   geom_point() +
   geom_smooth(method = "lm") +
@@ -56,7 +64,10 @@ ggplot(site_data, aes(x = tussocks, y = num_nests)) +
 This model is showing us a positive relationship between the number of tussocks and number of nests. Let's run our linear regression model.
 
 ```{r}
+# Linear model of number of nests v. number of tussocks
 tussocks_model <- lm(num_nests ~ tussocks, data = site_data)
+
+# View results
 summary(tussocks_model)
 ```
 
@@ -69,6 +80,7 @@ What if we incorporate the year the data were collected into our model? Adding a
 First, let's plot a multiple scatterplot. Do we see the same patterns?
 
 ```{r}
+# Scatterplot + year
 ggplot(site_data, aes(x = tussocks, y = num_nests, color = year)) +
   geom_point() +
   geom_smooth(method = "lm") +
@@ -83,14 +95,17 @@ By adding the year variable into the model, we are also asking if the number of 
 The way we add an independent variable is with a `+` in the equation.
 
 ```{r}
+# Linear model of number of nests v. number of tussocks and the year
 tussocks_model <- lm(num_nests ~ tussocks + year, data = site_data)
+
+# View results
 summary(tussocks_model)
 ```
 
 We have a bunch of estimates now! Don't worry, I won't be asking you to put them into an equation :) We are only focusing on significance values.
 
 -   `tussocks`: the p-value for the tussocks row (p = 0.7) shows whether the number of tussocks is a significant driver of nest numbers (it isn't!)
--   `year2011`: this p-value is significant (p = 4.69e-05)---year does seem to impact how many nests there are
+-   `year2011`: this p-value is significant (p = 4.69e-05) --- year does seem to impact how many nests there are
     -   (you don't need to know this, but if you are curious...): the reason this says `year2011` and not just `year` is because year is acting as a category, and we can get different coefficient estimates for year. The first option in the categorical variable (1971, in this case) is incorporated into the current intercept estimate, so `year2011` indicates the difference from the original.
 
 ### Interactions
@@ -111,7 +126,10 @@ In our example above, an interactive effect between tussocks and year would mean
 Let's run a model that includes the interaction term in our model. To do this, we will use an asterisk (`*`) instead of a plus sign.
 
 ```{r}
+# Linear model with interaction
 tussocks_model <- lm(data = site_data, num_nests ~ tussocks * year)
+
+# View results
 summary(tussocks_model)
 ```
 
@@ -137,6 +155,7 @@ Let's investigate how stone size influences nest numbers. Gentoo penguins build 
 Start by plotting the relationship between stone size and the number of nests.
 
 ```{r}
+# Scatterplot
 ggplot(site_data, aes(x = stone_size, y = num_nests)) +
   geom_point() +
   geom_smooth(method = "lm")
@@ -145,7 +164,10 @@ ggplot(site_data, aes(x = stone_size, y = num_nests)) +
 What does the regression model?
 
 ```{r}
+# Linear model of number of nests v. stone size
 stone_size_mod = lm(num_nests ~ stone_size, data = site_data)
+
+# View results
 summary(stone_size_mod)
 ```
 
@@ -154,6 +176,7 @@ How to we interpret this model?
 Next, let's add year in the mix. First, plot the relationship between the number of nests and stone size by year.
 
 ```{r}
+# Scatterplot + year
 ggplot(site_data, aes(x = stone_size, y = num_nests, color = year)) +
   geom_point() +
   geom_smooth(method = "lm")
@@ -162,7 +185,10 @@ ggplot(site_data, aes(x = stone_size, y = num_nests, color = year)) +
 This plot looks pretty different from the one with tussocks. First, let's see what happens when we add the year variable *without* the interactive term. To do that, we use a plus sign (`+`), not an asterisk (`*`).
 
 ```{r}
+# Linear model of number of nests v. stone size and the year
 stone_size_mod = lm(num_nests ~ stone_size + year, data = site_data)
+
+# View results
 summary(stone_size_mod)
 ```
 
@@ -171,7 +197,10 @@ How do we interpret this multiple regression model?
 From the ggplot above, we can see that the slopes for the two different years are quite different: one is pretty flat while the other is definitely positive. Different slopes often indicate that an *interaction* might be at work. Let's find out. Run another multiple regression model, this time adding in the interactive effect (`*`).
 
 ```{r}
+# Linear model with interaction
 stone_size_mod = lm(num_nests ~ stone_size * year, data = site_data)
+
+# View results
 summary(stone_size_mod)
 ```
 

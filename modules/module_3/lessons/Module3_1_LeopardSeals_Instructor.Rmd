@@ -21,7 +21,7 @@ diets with some fish that are wild-caught for a while. These fish are
 caught by members of Team Antarctica, but there is quite a bit of risk
 involved.
 
-![](seal2.jpeg) One of the main hazards to these fishing teams are
+![](seal2.jpeg)One of the main hazards to these fishing teams are
 [leopard seals](https://en.wikipedia.org/wiki/Leopard_seal). They're
 apex predators in this ecosystem and are quite large, averaging 2.4--3.5
 m (7.9--11.5 ft) in length and 200-600 kilograms (440-1,320 lb) in
@@ -61,7 +61,10 @@ can tie it to a particular manufacturer.
 Our data on collars is in a file called "collar_data.csv."
 
 ```{r message = FALSE}
+# Load library
 library(tidyverse)
+
+# Load data
 collars <- read_csv("../data/collar_data.csv")
 ```
 
@@ -80,18 +83,20 @@ collars <- read_csv("../data/collar_data.csv")
 
 Let's practice. Write some code to do the following:
 
--   calculate the mean and sd for:
+-   Calculate the mean and standard deviation for:
     -   battery life
     -   signal distance
--   do this for both manufacturers
+-   Do this for both manufacturers
 
 ```{r summarize}
 bat_life_and_signal <- collars %>%
-  group_by(maker) %>%
-  summarize(bat_life_mean = mean(battery_life),
-            bat_life_sd = sd(battery_life),
-            signal_mean = mean(signal_distance),
-            signal_sd = min(signal_distance)) 
+  group_by(maker) %>%                                 # Group by manufacturer
+  summarize(bat_life_mean = mean(battery_life),       # Mean (battery)
+            bat_life_sd = sd(battery_life),           # SD (battery)
+            signal_mean = mean(signal_distance),      # Mean (signal)
+            signal_sd = min(signal_distance))         # SD (signal)
+
+# View results
 bat_life_and_signal
 ```
 
@@ -99,10 +104,14 @@ We also might want to count up how many collar failures are attributed
 to each maker.
 
 ```{r}
+# Number of failed collars per maker
+
+# Option 1: summarize + sum
 collars %>% 
   group_by(maker) %>% 
   summarize(fail_count = sum(fail))
 
+# Option 2: count
 collars %>% 
   group_by(maker) %>% 
   count(fail)
@@ -120,15 +129,16 @@ remind ourselves how this works!
 ### One Continuous Variable at a Time
 
 What types of plots can we use to explore one continuous variable (and
-one categorical variable--in this case, maker)?
+one categorical variable --- in this case, maker)?
 
--   multiple histogram
--   multiple density plot
--   box-and-whisker plot
+-   Multiple histogram
+-   Multiple density plot
+-   Box-and-whisker plot
 
 We can start with a histogram of the battery life of the collars.
 
 ```{r}
+# Histogram
 ggplot(collars, aes(battery_life)) +
   geom_histogram()
 ```
@@ -137,6 +147,7 @@ We probably want to add in the collar maker to see some differences
 there.
 
 ```{r}
+# Histogram by maker
 ggplot(collars, aes(battery_life, fill = maker)) +
   geom_histogram(alpha = 0.5, position = "identity")
 ```
@@ -159,13 +170,15 @@ Let's take a look at the help file for `geom_vline()` to see what
 arguments it takes. Scroll down to the "Aesthetics" section.
 
 ```{r}
-?geom_vline
+# What is geom_vline?
+? geom_vline
 ```
 
 It looks like we will need to specify the data and the x-intercept, the
 place on the x-axis that matches the mean value.
 
 ```{r}
+# Histogram by maker, with mean line
 ggplot(collars, aes(battery_life, fill = maker)) +
   geom_histogram(alpha = 0.5, position = "identity") +
   geom_vline(data = bat_life_and_signal, aes(xintercept = bat_life_mean))
@@ -181,6 +194,7 @@ Let's wrap this up and make it extra nice by adding color, labels, and a
 theme.
 
 ```{r}
+# Histogram by maker, with mean line and labels
 ggplot(collars, aes(battery_life, fill = maker)) +
   geom_histogram(alpha = 0.5, position = "identity") +
   geom_vline(data = bat_life_and_signal, aes(xintercept = bat_life_mean, color = maker)) + 
@@ -196,6 +210,7 @@ ggplot(collars, aes(battery_life, fill = maker)) +
 Make the same plot that we made above expect for the signal distance.
 
 ```{r}
+# Same as above, but for signal distance
 ggplot(collars, aes(signal_distance, fill = maker)) +
   geom_histogram(alpha = 0.5, position = "identity") +
   geom_vline(data = bat_life_and_signal, aes(xintercept = signal_mean, color = maker)) + 
@@ -213,6 +228,7 @@ let's bring them together into one plot to see what the relationship
 between them is like. What type of plot will be use for that?
 
 ```{r}
+# Scatterplot
 ggplot(collars, aes(x = signal_distance, y = battery_life, color = maker)) +
   geom_point()
 ```

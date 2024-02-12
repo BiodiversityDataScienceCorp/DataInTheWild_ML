@@ -1,7 +1,7 @@
 ---
-title: "Module 4 Assignment 1"
-author: "Ellen Bledsoe"
-date: "`r Sys.Date()`"
+title: "Module 4: Assignment 1"
+author: "Ellen Bledsoe"     # <- your name here!
+date: "`r Sys.Date()`"      # <- uses the current date when rendered
 output: pdf_document
 ---
 
@@ -58,9 +58,9 @@ First load the tidyverse and read in the hair grass data set.
 
 2.  Which variable is the independent variable? Which is the dependent?
 
-    *Independent:*
+    -   ***Independent:***
 
-    *Dependent:*
+    -   ***Dependent:***
 
 3.  Create a scatter plot of hair grass density and phosphorus content (do not add a line of best fit yet). Be sure to make the labels easier to understand and add a theme.
 
@@ -70,7 +70,9 @@ First load the tidyverse and read in the hair grass data set.
 
 4.  Write 1-2 sentences interpreting the plot above. Is this a positive relationship, negative relationship or no relationship at all? Based on your prediction, do you think the correlation coefficient will be positive, negative, or zero?
 
-    *Answer:*
+    -   ***Independent:***
+
+    -   ***Dependent:***
 
 5.  Calculate the correlation coefficient, `r`.
 
@@ -84,13 +86,13 @@ First load the tidyverse and read in the hair grass data set.
 
 ```
 
-*Interpretation:*
+***Interpretation:***
 
 7.  What are the null and alternative hypothesis regarding the relationship between these two variables? (2 pts)
 
-    **Null:**
+    -   ***Null:***
 
-    **Alternative:**
+    -   ***Alternative:***
 
 8.  Create the scatter plot that includes the line of best fit (have `ggplot2` calculate the linear equation for you). Again, make the labels clearer and add a theme
 
@@ -106,11 +108,11 @@ First load the tidyverse and read in the hair grass data set.
 
 10. Write out the equation for the line of best fit using the values from the results above and the variable names.
 
-    *Answer:*
+    ***Answer:***
 
 11. Interpret the model summary. What is the p-value for our variable of interest? Do we accept or reject the null hypothesis regarding the relationship between these two variables? What can we conclude then about building a road? (2 pts)
 
-    *Answer:*
+    ***Answer:***
 
 ### Summer Temperature
 
@@ -124,7 +126,7 @@ Now let's do the same thing for the average summer temperatures.
 
 13. Write 1-2 sentences interpreting the plot above. Is this a positive relationship, negative relationship or no relationship at all? Based on your prediction, do you think the correlation coefficient will be positive, negative, or zero?
 
-    *Answer:*
+    ***Answer:***
 
 14. Calculate the correlation coefficient, `r`.
 
@@ -138,7 +140,7 @@ Now let's do the same thing for the average summer temperatures.
 
 ```
 
-*Interpretation:*
+***Interpretation:***
 
 16. Create the scatter plot that includes the line of best fit (have `ggplot2` calculate the linear equation for you). Make the labels easier to interpret and add a theme.
 
@@ -154,4 +156,4 @@ Now let's do the same thing for the average summer temperatures.
 
 18. Interpret the model summary. What is the p-value for our variable of interest? Do we accept or reject the null hypothesis regarding the relationship between these two variables? What can we conclude then about building a road? (2 points)
 
-    *Answer:*
+    ***Answer:***

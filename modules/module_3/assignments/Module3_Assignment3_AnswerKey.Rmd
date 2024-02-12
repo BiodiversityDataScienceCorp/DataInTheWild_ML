@@ -1,57 +1,163 @@
 ---
 title: 'Module 3: Assignment 3'
-author: "Ellen Bledsoe"
-date: "`r Sys.Date()`"
+author: "Ellen Bledsoe"     # <- your name here!
+date: "`r Sys.Date()`"      # <- uses the current date when rendered
 output: pdf_document
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
 ```
 
+# Student Answer Key
+
+### This document contains the answers to the assignment without the code that produces it.
+
+1.  
 
 ```{r message = FALSE}
-    library(tidyverse)
-    solar_panels <- read_csv("../data/solar_panels.csv")
-    solar_panels
+# Load library
+library(tidyverse)
+
+# Load data
+solar_panels <- read_csv("../data/solar_panels.csv")
+
+# View data
+solar_panels
 ```
 
-2.
+### The North Side
+
+2.  
+
 ```{r}
+# Filter north solar panels
 north <- solar_panels %>% 
   filter(direction == "North")
+
+# View
 north
 ```
 
-4.
+3.  
+
 ```{r}
+# Independent:
+
+# Dependent:
+```
+
+4.  
+
+```{r}
+# Mean watts per company
 north %>% 
   group_by(company) %>% 
   summarise(mean = mean(watts_per_hour))
 ```
 
-9.
+5.  
+
 ```{r}
+# Independent:
+
+# Dependent:
+```
+
+6.  
+
+```{r}
+# Is there one company with a real higher average?
+
+```
+
+7.  
+
+```{r}
+# Answer:
+```
+
+8.  
+
+```{r}
+# Answer:
+```
+
+### The South Side
+
+9.  
+
+```{r}
+# Filter south solar panels
 south <- solar_panels %>% 
   filter(direction == "South")
+
+# View
 south
 ```
 
-10.
+10. 
+
 ```{r}
+# Mean watts per company
 south %>% 
   group_by(company) %>% 
   summarise(mean = mean(watts_per_hour))
 ```
 
+11. 
+
 ```{r}
+# Is there one company with a real higher average?
+
+```
+
+12. 
+
+```{r}
+# Answer:
+```
+
+13. 
+
+```{r}
+# Answer:
+```
+
+### Final test
+
+```{r}
+# Final test solar panels
 final <- read_csv("../data/final_solar.csv")
+
+# View
 final
 ```
 
-14.
+14. 
+
 ```{r}
+# Mean watts per company
 final %>% 
   group_by(company) %>% 
   summarise(mean = mean(watts_per_hour))
+```
+
+15. 
+
+```{r}
+# Is there a real difference between the companies?
+
+```
+
+16. 
+
+```{r}
+# Answer:
+```
+
+17. 
+
+```{r}
+# Answer:
 ```

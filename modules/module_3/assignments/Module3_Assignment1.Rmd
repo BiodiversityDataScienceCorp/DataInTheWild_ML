@@ -1,7 +1,7 @@
 ---
 title: "Module 3 Assignment 1"
-author: "Ellen Bledsoe" # <- your name here!
-date: '2022-10-27'      # <- the date here!
+author: "Ellen Bledsoe"     # <- your name here!
+date: "`r Sys.Date()`"      # <- uses the current date when rendered
 output: pdf_document
 ---
 
@@ -46,11 +46,12 @@ Let's load the `tidyverse` and read in the data set. Call the data `turbines`.
 
 1.  Explore the data set, either through the environment or through code. Answer the following questions (2 point):
 
-    a.  How many turbine makers are there?
-    b.  What does each row of data represent?
+    a.  How many turbine makers are there? ***Answer:***
+
+    b.  What does each row of data represent? ***Answer:***
 
     ```{r}
-    # optional; only if you want space for coding
+    # Optional: Only if you want space for coding
     ```
 
 ### Numeric
@@ -63,11 +64,11 @@ Let's load the `tidyverse` and read in the data set. Call the data `turbines`.
 
 ### Visual
 
-3.  Create a mutiple density plot for the power output variable. (3 points)
-    -   be sure to have a density plot for each turbine producer; the color and the fill should be determined by the maker of the turbine
-    -   add in vertical lines for the mean values in the same color as the turbine makers (remember to reference the correct data frame!)
-    -   make sure the x-axis, y-axis, and legend labels are capitalized and easier to understand 
-    -   use the `theme_classic()` function
+3.  Create a multiple density plot for the power output variable. (3 points)
+    -   Be sure to have a density plot for each turbine producer; the color and the fill should be determined by the maker of the turbine
+    -   Add in vertical lines for the mean values in the same color as the turbine makers (remember to reference the correct data frame!)
+    -   Make sure the x-axis, y-axis, and legend labels are capitalized and easier to understand
+    -   Use the `theme_classic()` function
 
 ```{r}
 
@@ -76,9 +77,10 @@ Let's load the `tidyverse` and read in the data set. Call the data `turbines`.
 4.  Generate a box-and-whisker plot using `ggplot2` that compares the wind speed between different turbine makers (3 points).
 
     The plot should:
-    -   have capitalized and more descriptive axis labels (hint: wind speed is measured in kilometers per hour---km/hr)
-    -   show raw data points in addition to the boxes. The points should be jittered.
-    -   use the `theme_classic()` function
+
+    -   Have capitalized and more descriptive axis labels (hint: wind speed is measured in kilometers per hour --- km/hr)
+    -   Show raw data points in addition to the boxes. The points should be jittered.
+    -   Use the `theme_classic()` function
 
 ```{r}
 
@@ -90,17 +92,27 @@ Let's load the `tidyverse` and read in the data set. Call the data `turbines`.
 
 Power Output:
 
--   **Null Hypothesis** (H~0~):\
+-   **Null Hypothesis** (H~0~):
+
+    ***Answer:***
+
 -   **Alternative Hypothesis** (H~A~):
-    
+
+    ***Answer:***
+
 Wind Speed:
 
--   **Null Hypothesis** (H~0~):\
+-   **Null Hypothesis** (H~0~):
+
+    ***Answer:***
+
 -   **Alternative Hypothesis** (H~A~):
+
+    ***Answer:***
 
 6.  Based on the mean values in the `turbine_summary` data frame and the plots you've created above, predict the outcome of each t-test that we will run: 1 comparing wind speeds, 1 comparing power outputs (graded for completion, not accuracy). Explain your reasoning (1-2 sentences for each t-test is fine). (2 points)
 
-    *Answer:*
+    ***Answer:***
 
 7.  Perform a t-test on the power output by turbine maker. (1 point)
 
@@ -110,7 +122,7 @@ Wind Speed:
 
 8.  In 2-3 sentences, interpret the output from question 7. Focus on what the p-value is in reference to the cutoff of 0.05, what that means, and whether that means we accept or reject the null hypothesis. (2 points)
 
-    *Answer:*
+    ***Answer:***
 
 9.  Perform another t-test, this time on the wind_speed variable by manufacturer. (1 point)
 
@@ -120,4 +132,4 @@ Wind Speed:
 
 10. In 2-3 sentences, interpret the output from question 9 (focus on the same ideas as question 8). (2 points)
 
-    *Answer:*
+    ***Answer:***

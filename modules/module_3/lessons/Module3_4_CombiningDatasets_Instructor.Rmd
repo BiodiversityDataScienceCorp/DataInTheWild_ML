@@ -42,10 +42,10 @@ Being able to join together data from related tables is a key skill in data scie
 Let's load in the `tidyverse` and the data we're working.
 
 ```{r message=FALSE}
-# load the tidyverse
+# Load the tidyverse
 library(tidyverse)
 
-#loading in the data
+# Loading in the data
 collars <- read_csv("../data/collar_data.csv")
 new_collars <- read_csv("../data/new_collars.csv")
 old_collars_new_data <- read_csv("../data/old_collars_new_data.csv")
@@ -55,10 +55,11 @@ old_collars_new_data <- read_csv("../data/old_collars_new_data.csv")
 
 First, let's explore our data. We want to focus on 2 things here:
 
-(1) the columns: which ones match columns in other datasets
-(2) collar identity: which datasets have matching collars or new collars
+(1) The columns: Which ones match columns in other datasets?
+(2) Collar identity: Which datasets have matching collars or new collars?
 
 ```{r}
+# View first few rows of each dataset
 head(collars)
 head(new_collars)
 head(old_collars_new_data)
@@ -68,9 +69,9 @@ head(old_collars_new_data)
 
 In small groups, talk through the process of combining these three datasets. Think about the following:
 
--   which columns match and which ones don't?
--   which rows match and which ones don't?
--   does the order in which we combine datasets matter?
+-   Which columns match and which ones don't?
+-   Which rows match and which ones don't?
+-   Does the order in which we combine datasets matter?
 
 Draw out a diagram that represents how this process might go.
 
@@ -90,7 +91,7 @@ In the following diagram, the two example data frames have the column `x1` in co
 
 This can happen a couple ways, depending on which data frame is the reference and how much data you want to retain.
 
-![](joins.png){width=50%}
+![](joins.png){width="50%"}
 
 ### Binds
 
@@ -109,8 +110,10 @@ How should we go about combining our three datasets? Come up with a plan that yo
 Our first step in to merge the old collar data with the new data about those old collars.
 
 ```{r}
-# use a left join
-# full join would accomplish the same thing in this case because we don't have any missing rows
+# Use a left join
+
+# Full join would accomplish the same thing in this case because we don't have any missing rows
+
 old_collars_combined <- collars %>% 
   left_join(old_collars_new_data, by = c("collar_id", "maker"))
 
@@ -125,6 +128,7 @@ Could we have used another tactic to combine these two datasets? What would the 
 Now we need to add the new collars to our dataset. What is our best method for combining?
 
 ```{r}
+# Add new collars
 full <- bind_rows(old_collars_combined, new_collars)
 ```
 
@@ -139,6 +143,7 @@ To save our data as a .csv file that we can use in another analysis, we are goin
 The `write_csv` function requires the name of the dataframe to export as the first argument and the name of the file we want to create as the second argument.
 
 ```{r}
+# Save our new data
 write_csv(full, "../data/all_collar_data.csv")
 ```
 

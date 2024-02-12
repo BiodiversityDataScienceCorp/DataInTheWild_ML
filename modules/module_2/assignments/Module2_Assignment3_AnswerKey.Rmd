@@ -1,26 +1,59 @@
 ---
 title: "Module 2, Assignment 3"
-author: "Ellen Bledsoe"
-date: "2023-02-23"
-output:
-  pdf_document: default
+author: "Ellen Bledsoe"     # <- your name here!
+date: "`r Sys.Date()`"      # <- uses the current date when rendered
+output: pdf_document
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
 ```
 
-    ```{r message=FALSE}
-    library(palmerpenguins)
-    library(tidyverse)
-    ```
+```{{r message=FALSE}}
+library(palmerpenguins)
+library(tidyverse)
+```
+
+# Student Answer Key
+
+### This document contains the answers to the assignment without the code that produces it.
 
 ### REMINDER: Because I'm having you choose your own variables, the examples in the provided Answer Key likely will not match yours (though they might). You should strive to produce a plot that looks *similar in style* to those in the Answer Key, but the number of categories and the actual data points will likely be different.
 
+1.  
+
+```{r}
+# Load libraries
+library(tidyverse)
+library(palmerpenguins)
+```
+
+2.  
+
+```{r}
+# Answer:
+
+# species:
+
+# island:
+
+# bill_length_mm:
+
+# bill_depth_mm:
+
+# flipper_length:
+
+# body_mass_g:
+
+# sex:
+
+# year: continuous
+```
 
 3.  
 
 ```{r warning=FALSE, message=FALSE, fig.width=5, fig.height=4}
+# Histogram
 ggplot(penguins, aes(bill_depth_mm)) +
   geom_histogram(bins = 20) +
   labs(x = "Descriptive Axis Label",
@@ -28,9 +61,14 @@ ggplot(penguins, aes(bill_depth_mm)) +
   theme_bw()
 ```
 
+```{r}
+# Description:
+```
+
 4.  
 
 ```{r warning=FALSE, message=FALSE, fig.width=6, fig.height=4}
+# Multiple density plot
 ggplot(penguins, aes(body_mass_g, color = island, fill = island)) +
   geom_density(alpha = 0.5) +
   labs(x = "Descriptive Axis Label",
@@ -42,9 +80,14 @@ ggplot(penguins, aes(body_mass_g, color = island, fill = island)) +
   theme_bw()
 ```
 
+```{r}
+# Description:
+```
+
 5.  
 
 ```{r warning=FALSE, message=FALSE, fig.width=6, fig.height=4}
+# Box-and-whisker plot
 ggplot(penguins, aes(species, flipper_length_mm)) +
   geom_boxplot() +
   geom_jitter(alpha = 0.5, width = 0.1) +
@@ -54,9 +97,14 @@ ggplot(penguins, aes(species, flipper_length_mm)) +
   theme_classic()
 ```
 
-6.
+```{r}
+# Description:
+```
+
+6.  
 
 ```{r warning=FALSE, message=FALSE, fig.width=6, fig.height=4}
+# Scatterplot
 ggplot(penguins, aes(bill_length_mm, bill_depth_mm, color = island)) +
   geom_point() +
   labs(x = "Descriptive Axis Label",
@@ -66,3 +114,6 @@ ggplot(penguins, aes(bill_length_mm, bill_depth_mm, color = island)) +
   theme_light()
 ```
 
+```{r}
+# Description:
+```

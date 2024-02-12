@@ -1,40 +1,76 @@
 ---
 title: "Module 2, Assignment 1"
-author: "Ellen Bledsoe"
-date: "2023-09-24"
-output:
-  pdf_document: default
+author: "Ellen Bledsoe"     # <- your name here!
+date: "`r Sys.Date()`"      # <- uses the current date when rendered
+output: pdf_document
 ---
 
-```{r setup, include=FALSE, warning = FALSE}
-knitr::opts_chunk$set(echo = FALSE)
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
 ```
 
+# Student Answer Key
+
+### This document contains the answers to the assignment without the code that produces it.
+
+1.  
 
 ```{r, message = FALSE}
+# Load library
 library(tidyverse)
 ```
 
 2.  
+
 ```{r}
+# Load data
 sick_fish <- read_csv("../data/fish_sick_data.csv")
 ```
 
 3.  
 
 ```{r}
+# Look at columns and first few rows in dataframe
 head(sick_fish)
 ```
 
-7.  
+4.  
+
 ```{r}
+# Answer:
+```
+
+5.  
+
+```{r}
+# Answer 1:
+
+# Answer 2:
+```
+
+6.  
+
+```{r}
+# Answer:
+```
+
+7.  
+
+```{r}
+# Scatterplot (x =  total number of fish, y = number of sick fish)
 plot(sick_fish$num_fish, sick_fish$num_sick)
 ```
 
+8.  
+
+```{r}
+# Answer:
+```
 
 9.  
 
 ```{r}
+# Scatterplot using geom
 ggplot(sick_fish, aes(num_fish, num_sick)) +
   geom_point()
 ```
@@ -42,6 +78,7 @@ ggplot(sick_fish, aes(num_fish, num_sick)) +
 10. 
 
 ```{r}
+# Plot above with labels and theme
 ggplot(sick_fish, aes(num_fish, num_sick)) +
   geom_point() + 
   labs(x = "Total Number of Fish per Tank",
@@ -49,15 +86,24 @@ ggplot(sick_fish, aes(num_fish, num_sick)) +
   theme_bw()
 ```
 
-
-
 11. 
 
 ```{r}
+# Mean and standard deviation
 sick_fish %>% 
   group_by(species) %>% 
   summarise(mean_sick = mean(num_sick),
         sd_sick = sd(num_sick))
 ```
 
+12\.
 
+```{r}
+# Answer:
+```
+
+13\.
+
+```{r}
+# Answer:
+```

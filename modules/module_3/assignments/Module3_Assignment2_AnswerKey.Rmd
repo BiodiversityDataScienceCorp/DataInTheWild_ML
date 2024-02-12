@@ -1,67 +1,119 @@
 ---
 title: 'Module3: Assignment3'
-author: "Ellen Bledsoe"
-date: '2022-11-03'
-output:
-  pdf_document: default
-  html_document: default
+author: "Ellen Bledsoe"     # <- your name here!
+date: "`r Sys.Date()`"      # <- uses the current date when rendered
+output: pdf_document
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
 ```
 
+# Student Answer Key
+
+### This document contains the answers to the assignment without the code that produces it.
+
+1.  
+
 ```{r message = FALSE}
+# Load library
 library(tidyverse)
+
+# Load data
 fish <- read_csv("fish.csv")
 seals <- read_csv("seals.csv")
+```
+
+2.  
+
+```{r}
+# Null:
+
+# Alternate:
 ```
 
 3.  
 
 ```{r}
+# Mean and standard deviation of fish weight
 fish_summary <- fish %>% 
   group_by(bay) %>% 
   summarise(mean_fish = mean(fish_kg),
             sd_fish = sd(fish_kg))
+
+# View
 fish_summary
 ```
 
-
 4.  
+
 ```{r}
+# Box and whisker
 ggplot(fish, aes(bay, fish_kg)) +
   geom_boxplot() +
   geom_jitter(alpha = 0.5, width = 0.1) 
 ```
 
+5.  
+
+```{r}
+# Independent:
+
+# Dependent:
+```
 
 6.  
 
 ```{r}
+# ANOVA
 fish_model <- aov(data = fish, fish_kg ~ bay)
+
+# Results
 summary(fish_model)
 ```
 
+7.  
+
+```{r}
+# Answers:
+```
 
 8.  
+
 ```{r}
+# Pairwise comparisons
 TukeyHSD(fish_model)
+```
+
+9.  
+
+```{r}
+# Answer:
+```
+
+10. 
+
+```{r}
+# Answer:
 ```
 
 11. 
 
 ```{r}
+# Mean and standard deviation of number of seals
 seal_summary <- seals %>% 
   group_by(bay) %>% 
   summarise(mean_fish = mean(num_seals),
             sd_fish = sd(num_seals))
+
+# View
 seal_summary
 ```
 
 12. 
 
 ```{r}
+# Box and whisker plot
 ggplot(seals, aes(bay, num_seals)) +
   geom_boxplot() +
   geom_jitter(alpha = 0.5, width = 0.1) 
@@ -70,13 +122,22 @@ ggplot(seals, aes(bay, num_seals)) +
 13. 
 
 ```{r}
+# ANOVA
 seal_model <- aov(data = seals, num_seals ~ bay)
+
+# Results
 summary(seal_model)
+```
+
+14. 
+
+```{r}
+# Answers:
 ```
 
 15. 
 
 ```{r}
+# Pairwise comparisons
 TukeyHSD(seal_model)
 ```
-

@@ -13,9 +13,9 @@ knitr::opts_chunk$set(echo = TRUE)
 
 When we are comparing data from two groups, we often want to compare the mean values of the different groups to see if there are differences. We can do this in a number of ways:
 
--   numerically (descriptive statistics)
--   visually
--   statistically (inferential statistics)
+-   Numerically (descriptive statistics)
+-   Visually
+-   Statistically (inferential statistics)
 
 In this course so far, we have done the first 2: by calculating the mean values of groups and by plotting histograms, density plots, and box-plots.
 
@@ -24,13 +24,17 @@ Today, we will be exploring the statistical side, using inferential statistics. 
 Let's get set-up by loading the tidyverse and reading in our data.
 
 ```{r, message = FALSE}
+# Load library
 library(tidyverse)
+
+# Load data
 collars <- read_csv("../data/collar_data.csv")
 ```
 
 Let's take a quick look at the data structure to remind ourselves what data we are using.
 
 ```{r}
+# View first few rows
 head(collars)
 ```
 
@@ -71,12 +75,12 @@ Based on our question, we can now set up two different statistical hypotheses: t
 
 The null hypothesis always states that there is no difference or no relationship. We can think of the null hypothesis as our starting place---this is our default assumption. The alternative hypothesis is, well, the alternative to the null hypothesis. For example:
 
--   **Null Hypothesis** ($H_{0}$): there is no difference in the means of battery life between the two collar makers
--   **Alternative Hypothesis** ($H_{A}$): there is no difference in the means of battery life between the two collar makers
+-   **Null Hypothesis** ($H_{0}$): there is *no* difference in the means of battery life between the two collar makers
+-   **Alternative Hypothesis** ($H_{A}$): there *is* no difference in the means of battery life between the two collar makers
 
 How can we determine whether we should *not reject* ("accept") or *reject* the null hypothesis? That's where statistics come in.
 
-*(Note: for reasons I won't go into, we never accept the alternative hypothesis, we only reject the null hypothesis.)*
+*(Note: For reasons I won't go into, we never accept the alternative hypothesis, we only reject the null hypothesis.)*
 
 ### Running a t-test
 
@@ -102,6 +106,7 @@ We use a function called `t.test()`.
 -   The second argument is the data frame we are referencing.
 
 ```{r}
+# A t-test for battery life
 t.test(battery_life ~ maker, data = collars)
 ```
 
@@ -113,10 +118,10 @@ Let's talk through it:
 
 -   `t`: this is what we call the t-value, or t-statistic.
     -   Here, it is a metric of how different the difference of the two means is from 0.
-    -   Note that it doesn't correspond *directly* to the difference---it is taking into account the actual difference as well as the variation in the data sets.
+    -   Note that it doesn't correspond *directly* to the difference --- it is taking into account the actual difference as well as the variation in the data sets.
     -   Take home: big values (can be positive or negative) indicate a big difference from 0 while small values are mean the difference is close to 0.
 -   `df`: stands for *degrees of freedom*
-    -   it's a measure of your sample size and some other stuff---honestly, this is not something we're really going to focus on here
+    -   It's a measure of your sample size and some other stuff --- honestly, this is not something we're really going to focus on here.
 -   `p-value`: a measure of certainty of the difference outlined in the `t-statistic` above
     -   For the test above, our p-value is *very* small: 0.00000000000000022
         -   Wait, how did I get from `2.2e-16` to 0.00000000000000022?
@@ -150,18 +155,19 @@ We want to know if there is a significant difference in the average signal dista
 
 2.  Write out your null and alternative hypotheses.
 
--   **Null Hypothesis** ($H_{0}$): there is no difference in average signal distance between collar makers
--   **Alternative Hypothesis** ($H_{A}$): there is a difference in average signal distance between collar makers
+-   **Null Hypothesis** ($H_{0}$): there is *no* difference in average signal distance between collar makers
+-   **Alternative Hypothesis** ($H_{A}$): there *is* a difference in average signal distance between collar makers
 
 3.  Run the t-test
 
 ```{r}
+# A t-test for signal distance
 t.test(signal_distance ~ maker, data = collars)
 ```
 
 4.  Interpret the t-test
 
--   Is the p-value below our cut-off for significance (0.05)? yes, p \< 0.05
--   Is our result statistically significant? yes!
--   Does that mean we should or should not reject the null hypothesis? REJECT
--   So...is there a "real" difference in the means between the two companies or not? yes, there is a real difference
+-   Is the p-value below our cut-off for significance (0.05)? *Yes, p \< 0.05*
+-   Is our result statistically significant? *Yes!*
+-   Does that mean we should or should not reject the null hypothesis? *REJECT*
+-   So... is there a "real" difference in the means between the two companies or not? *Yes, there is a real difference*
