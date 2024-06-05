@@ -66,9 +66,6 @@ First, let's prepare our data.
 
         ***Answer:***
 
-    ```{=html}
-    <!-- -->
-    ```
     -   Based on the column names, briefly (just a few words) describe what data is included in each column. (2 points)
 
         ***Answer:***

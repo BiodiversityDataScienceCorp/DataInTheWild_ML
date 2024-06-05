@@ -40,10 +40,12 @@ Let's scope it out:
 Oh no, we might need to add a Fahrenheit column...let's practice.
 
 ```{r}
+# Make temperature conversion function
 c_to_f <- function(c = NULL){
   f <- (c * (9/5)) + 32
   return(f)
 }
+
 
 ```
 
@@ -59,9 +61,9 @@ data we have been given.
 
 Write some code that produces the following values *per species*.
 
--   mean (average) number of sick fish
--   mean (average) percentage of sick fish per tank
--   how many tanks
+-   Mean (average) number of sick fish
+-   Mean (average) percentage of sick fish per tank
+-   How many tanks
 
 ```{r}
 
@@ -105,8 +107,11 @@ data frames to do this.
 
 A useful function that we can use when we want to create a new column
 based on values in another column is the `if_else()` function. It
-operates the following way: 1. IF a condition is true, do [something].
-2. IF a condition is false, do [something ELSE].
+operates the following way:
+
+1.  IF a condition is true, do [something].
+
+2.  IF a condition is false, do [something ELSE].
 
 ```{r}
 

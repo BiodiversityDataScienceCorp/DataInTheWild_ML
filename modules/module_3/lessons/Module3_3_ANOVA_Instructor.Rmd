@@ -72,13 +72,15 @@ Let's write out our hypotheses.
 
 First, for battery life:
 
-**Null hypothesis**: There is no difference in the average battery life between the three collar makers.\
-**Alternative hypothesis**: There is a difference in the average battery life the three collar makers.
+-   **Null hypothesis**: There is no difference in the average battery life between the three collar makers.
+
+-   **Alternative hypothesis**: There is a difference in the average battery life the three collar makers.
 
 Next, for signal distance:
 
-**Null hypothesis**: There is no difference in the average signal distance between the three collar makers.\
-**Alternative hypothesis**: There is a difference in the average signal distance between the three collar makers.
+-   **Null hypothesis**: There is no difference in the average signal distance between the three collar makers.
+
+-   **Alternative hypothesis**: There is a difference in the average signal distance between the three collar makers.
 
 ### Numeric
 

@@ -23,7 +23,7 @@ A function is a block of code designed to perform a specific task. A function is
 
 A function takes specific **arguments** as input, processes them, and **returns** the output.
 
-![](images/r-function-syntax.png){width="515"}
+![](../assets/r-function-syntax.png){width="515"}
 
 We've used a lot of built-in functions already, like the `mean()` function.
 

@@ -52,6 +52,7 @@ We are going to use the `palmerpenguins` R package and data set, which we've use
 I've gone ahead and included the code to load the two packages you will need to successfully complete this project: the `tidyverse` and `palmerpenguins`. Be sure to run this code chunk!
 
 ```{r message = FALSE}
+# Load libraries
 library(tidyverse)
 library(palmerpenguins)
 ```
@@ -60,12 +61,13 @@ library(palmerpenguins)
 
 I've also included one more code chunk below. Be sure to run this code chunk, as well! It does two key things:
 
--   first, it adds the `penguins` data frame to your environment, which I imagine you will find helpful
--   second, it removes all rows that have any NA values, which will make completing this assignment a bit easier.
+-   First, it adds the `penguins` data frame to your environment, which I imagine you will find helpful
+-   Second, it removes all rows that have any NA values, which will make completing this assignment a bit easier.
 
 Once you've run this line of code, you should see the `penguins` data frame pop up in your environment with 333 observations (rows) and 8 variables (columns).
 
 ```{r}
+# Load data + drop NA values
 penguins <- penguins %>% drop_na()
 ```
 
@@ -89,11 +91,11 @@ For example, in Problem Set 1, you should use the `biscoe` data frame that you c
 
 When I ask you to interpret statistical results, you should roughly follow these guidelines.
 
--   the cut-off for our p-values is always 0.05
--   report the p-value that we are focused on
--   if there are multiple p-values of interest, report all of them
--   state whether the p-value indicates a significant difference/relationship
--   if applicable, state whether we should or should not reject the null hypothesis
+-   The cut-off for our p-values is always 0.05
+-   Report the p-value that we are focused on
+-   If there are multiple p-values of interest, report all of them
+-   State whether the p-value indicates a significant difference/relationship
+-   If applicable, state whether we should or should not reject the null hypothesis
 
 ### Plotting
 
@@ -101,15 +103,15 @@ All plots should be made using `ggplot2`.
 
 Your options for plot types to choose from are:
 
--   [multiple]{.underline} histogram plots
-    -   use transparency (`alpha`)
-    -   use `position = "identity"` with multiple groups to see the full distributions
--   [multiple]{.underline} density plots
-    -   use transparency (`alpha`) with multiple groups to see the full distributions
--   box-and-whisker plot
-    -   add points on top of the box plot to show the distribution of the points
--   scatter plot
-    -   add the linear model to every scatter plot
+-   [Multiple]{.underline} histogram plots
+    -   Use transparency (`alpha`)
+    -   Use `position = "identity"` with multiple groups to see the full distributions
+-   [Multiple]{.underline} density plots
+    -   Use transparency (`alpha`) with multiple groups to see the full distributions
+-   Box-and-whisker plot
+    -   Add points on top of the box plot to show the distribution of the points
+-   Scatter plot
+    -   Add the linear model to every scatter plot
 
 **Note: All plots should have modified axis labels and legend labels.**
 
@@ -144,12 +146,12 @@ This problem set has 2 parts.
 
 #### Question: Is there a significant relationship between bill length and bill depth for penguins on Biscoe Island?
 
-
 For this problem set, we are going to use data from Biscoe island only.
 
 1.  Create a new data frame called `biscoe` that includes only penguins from Biscoe island. This new data frame should have 163 rows. (2 points)
 
 ```{r}
+# Filter data to Biscoe
 biscoe <- penguins %>% 
   filter(island == "Biscoe")
 ```
@@ -159,15 +161,15 @@ You will want to use the `biscoe` data set for the rest of Problem Set #1.
 This is a scenario where there is no independent and no dependent variable. Go ahead and **treat bill length as the independent variable (x-axis) and bill depth as the dependent variable (y-axis).**
 
 2.  Determine whether bill length and bill depth are continuous or categorical (2 points)
-    -   **bill depth**: dependent
-    -   **bill length**: independent
+    -   **Bill depth**: ***Dependent***
+    -   **Bill length**: ***Independent***
 
 For now, ignore species. We will address species in Part 2 of the problem set.
 
 3.  Write the correct pair of statistical hypotheses for our question. (2 points)
 
-    **Null**: no relationship between bill length and bill depth\
-    **Alternative**: there is a relationship between bill length and bill depth
+    **Null**: ***No relationship between bill length and bill depth.***\
+    **Alternative**: ***There is a relationship between bill length and bill depth.***
 
 4.  Plot the relationship between bill length and bill depth using the appropriate plot type. (3 points)
 
@@ -176,6 +178,7 @@ For now, ignore species. We will address species in Part 2 of the problem set.
     -   Remember, we are ignoring species for now.
 
 ```{r}
+# Scatterplot
 ggplot(biscoe, aes(bill_length_mm, bill_depth_mm)) +
   geom_point() +
   geom_smooth(method = "lm") +
@@ -186,37 +189,40 @@ ggplot(biscoe, aes(bill_length_mm, bill_depth_mm)) +
 
 5.  Describe the relationship that you see in the plot you just made. Is the relationship positive, negative, or nonexistent? How do you know? (2 points)
 
-    *Answer:* negative; downward slope, high values associated with low values on the other axis
+    ***Answer: Negative; downward slope, high values associated with low values on the other axis***
 
 6.  Calculate the correlation coefficient, `r`. What does this value confirm for us about the relationship (positive, negative, no relationship)? (2 points)
 
     ```{r}
+    # Correlation coefficient
     r <- cor(biscoe$bill_length_mm, biscoe$bill_depth_mm)
+
+    # View
     r
     ```
 
-    *Answer:* negative relationship
+    ***Answer: Negative relationship***
 
 7.  Calculate the `r^2` value. Remember, this number is typically expressed as a percent (x 100). What is this value telling us? (2 points)
 
     ```{r}
+    # r-squared
     r^2 * 100
     ```
 
-    *Answer:* About 20% variation explained
+    ***Answer: About 20% variation explained***
 
 8.  Let's see if there is a significant relationship between bill length and bill depth. Perform the correct statistical analysis (1 point) and interpret the results. (5 points total)
 
     ```{r}
+    # Linear model + results
     summary(lm(data = biscoe, bill_depth_mm ~ bill_length_mm))
     ```
 
-    -   What is the equation of the line of best fit? Use both variable names and values from the statistical analysis. (1 point)
-    -   What is the p-value? (1 point)
-    -   Is there a significant relationship? (1 point)
-    -   What should we do with the null hypothesis? (1 point)
-
-    *Answer*: bill_depth = -0.168\*bill_length + 23.5; p = 2.74e-9, highly significant
+    -   What is the equation of the line of best fit? Use both variable names and values from the statistical analysis. (1 point) ***Answer: bill_depth = -0.168\*bill_length + 23.5***
+    -   What is the p-value? (1 point) ***Answer: p = 2.74e-9***
+    -   Is there a significant relationship? (1 point) ***Answer: Highly significant***
+    -   What should we do with the null hypothesis? (1 point) ***Answer: Reject***
 
 ### Part 2 (10 points)
 
@@ -225,6 +231,7 @@ When we look at the plot of the data, it looks like there might be two different
 9.  Make the color of the points and the linear models differ by species on Biscoe Island. Be sure to adjust *all* labels on the plot accordingly. (3 points)
 
 ```{r}
+# Scatterplot
 ggplot(biscoe, aes(bill_length_mm, bill_depth_mm, color = species)) +
   geom_point() +
   geom_smooth(method = "lm") +
@@ -237,16 +244,17 @@ ggplot(biscoe, aes(bill_length_mm, bill_depth_mm, color = species)) +
 10. Run the appropriate statistical test, adding species (and the interaction between the two independent variables) into the model. (2 points)
 
 ```{r}
+# Linear model + results
 summary(lm(data = biscoe, bill_depth_mm ~ bill_length_mm * species))
 ```
 
 11. Interpret the results of the test above. Is species significant? Is there a significant interaction between bill length and species? (1 points)
 
-*Answer: neither species nor interaction is significant*
+***Answer: Neither species nor interaction is significant***
 
 12. Based on the plots, the linear relationships, and the linear models, write 2-3 sentences discussing if and/or how adding species into our linear model changes our interpretation of the data. Did the type of relationship change? Did significance levels change? Do the two linear models tell us different things? (3 points)
 
-*Answer: negative to positive; models still tell us similar things in terms of significance, though*
+***Answer: Negative to positive; models still tell us similar things in terms of significance, though***
 
 ------------------------------------------------------------------------
 
@@ -257,6 +265,7 @@ summary(lm(data = biscoe, bill_depth_mm ~ bill_length_mm * species))
 1.  Our first step is to create a new data frame that includes only Chinstrap penguins. Call this new data frame `chinstrap`. (1 point)
 
 ```{r}
+# Filter to chinstrap penguins
 chinstrap <- penguins %>% 
   filter(species == "Chinstrap")
 ```
@@ -266,6 +275,7 @@ We will be using the `chinstrap` data frame for the rest of this problem set.
 2.  Let's summarize our data. Calculate one measure of central tendency and one measure of variability of the flipper length column for *each* sex: male and female. Save this dataframe as `chinstrap_summary`. (2 points)
 
 ```{r}
+# Mean and standard deviation of flipper length
 chinstrap_summary <- chinstrap %>% 
   group_by(sex) %>% 
   summarise(mean_flipper = mean(flipper_length_mm),
@@ -277,6 +287,7 @@ chinstrap_summary <- chinstrap %>%
     a.  First, create a function that will convert a number from millimeters to centimeters. There are 10 millimeters in a centimeter. (1 point)
 
     ```{r}
+    # Function for conversion of mm to cm
     mm_to_cm <- function(mm) {
       cm <- mm / 10
       return(cm)
@@ -286,6 +297,7 @@ chinstrap_summary <- chinstrap %>%
     b.  Now, using the same code from question 3 above, add one line of code (in the correct location) that uses your newly created `mm_to_cm` function to create a new column in the dataframe. Make sure to edit the arguments in summary functions accordingly, as well. The result should be the same data frame that you produced in question 3 but with the summary values in cm instead of mm.(1 point)
 
     ```{r}
+    # Modify flipper length column + find mean and sd
     chinstrap_summary <- chinstrap %>% 
       mutate(flipper_length_cm = mm_to_cm(flipper_length_mm)) %>% 
       group_by(sex) %>% 
@@ -293,20 +305,21 @@ chinstrap_summary <- chinstrap %>%
                 sd_flipper = sd(flipper_length_cm))
     ```
 
-Ok, we have summarized the flipper length data for our two groups! 
+Ok, we have summarized the flipper length data for our two groups!
 
 Let's get back to the `chinstrap` dataframe (not the summary dataframe), and keep working.
 
 4.  Determine which variable is *dependent* and which is *independent*. Also determine if each variable is *continuous* or *categorical*. (1 points)
 
--   **flipper length**: dependent, continuous
--   **species**: independent, categorical
+-   ***Flipper length: dependent, continuous***
+-   ***Species: independent, categorical***
 
 Let's plot the flipper length data for each sex.
 
 5.  Choose an appropriate plot for the data. Be sure to adjust the x- and y-axis labels appropriately. (2 points)
 
 ```{r}
+# Boxplot
 ggplot(chinstrap, aes(sex, flipper_length_mm)) +
   geom_boxplot() +
   geom_jitter(width = 0.1, alpha = 0.5) +
@@ -314,8 +327,9 @@ ggplot(chinstrap, aes(sex, flipper_length_mm)) +
        y = "Flipper Length (mm)") +
   theme_bw()
 
-# OR
+### OR
 
+# Histogram
 ggplot(chinstrap, aes(flipper_length_mm, fill = sex)) +
   geom_histogram(alpha = 0.5, position = "identity") +
   labs(x = "Flipper Length (mm)",
@@ -323,8 +337,9 @@ ggplot(chinstrap, aes(flipper_length_mm, fill = sex)) +
        fill = "Sex") +
   theme_bw()
 
-# OR
+### OR
 
+# Density plot
 ggplot(chinstrap, aes(flipper_length_mm, fill = sex)) +
   geom_density(alpha = 0.5) +
   labs(x = "Flipper Length (mm)",
@@ -335,32 +350,34 @@ ggplot(chinstrap, aes(flipper_length_mm, fill = sex)) +
 
 6.  Write the pair of statistical hypotheses for our question. (1 points)
 
-    **Null**: no difference in the mean flipper length between male and female chinstrap penguins 
-    **Alternative**: true difference in the mean flipper length between male and female chinstrap penguins
+    -   ***Null: No difference in the mean flipper length between male and female chinstrap penguins***
+
+    -   ***Alternative: True difference in the mean flipper length between male and female chinstrap penguins***
 
 7.  Perform the appropriate analysis to compare the flipper lengths of male and female chinstrap penguins. (2 points)
 
 ```{r}
+# t-test
 t.test(data = chinstrap, flipper_length_mm ~ sex)
 ```
 
 8.  Interpret the results of this test. (2 points)
 
-    -   is there a significant difference?
-    -   what does that significant difference mean?
-    -   should we reject the null hypothesis?
+    -   Is there a significant difference?
+    -   What does that significant difference mean?
+    -   Should we reject the null hypothesis?
 
-    *Answer: yes, there is a significant difference (p = 2.535 x 10\^-7); reject null*
+    ***Answer: Yes, there is a significant difference / p = 2.535 x 10\^-7) / Reject null***
 
 9.  Should we run pairwise comparisons? If no, explain why not. If yes, do so and interpret the results. (2 points)
 
-    *Answer:* no, t-test is comparing just one pair
+    ***Answer: No, t-test is comparing just one pair***
 
 ```{r}
 
 ```
 
----- 
+------------------------------------------------------------------------
 
 ## Problem Set 3 (15 points)
 
@@ -371,8 +388,8 @@ Let's start by summarizing the bill length data.
 1.  Calculate at least one measure of central tendency and one measure of variability for the bill length for *each* island. (2 points)
 
 ```{r}
-# measures of central tendancy include mean, median, or mode
-# measures of dispersion are st dev or BOTH min and max
+# (1) Measures of central tendancy include mean, median, or mode
+# (2) Measures of dispersion are standard dev *or* BOTH min and max
 penguins %>% 
   group_by(island) %>% 
   summarise(min_bill = min(bill_length_mm),
@@ -381,23 +398,25 @@ penguins %>%
 ```
 
 2.  Which of our variables would be considered *independent* and which one *dependent*? Also determine whether each is *continuous* or *categorical*. (2 points)
-    -   **island**: independent, categorical
-    -   **bill length**: dependent, continuous
+    -   ***Island: independent, categorical***
+    -   ***Bill length: dependent, continuous***
 
 Now that we have an idea numerically of the differences between the islands, let's plot the differences.
 
 3.  Choose an appropriate plot. Ensure that you follow the plotting guidelines in the Structure & Guidelines section above! (2 points)
 
 ```{r}
+# Boxplot
 ggplot(penguins, aes(island, bill_length_mm)) + # adding color is optional
   geom_boxplot() +
   geom_jitter(width = 0.1, alpha = 0.5) +
   labs(x = "Island",
-       y = "Bill Length (mm)") +            # if adding color, must change color label
-  theme_bw()                                # can choose any theme but must include
+       y = "Bill Length (mm)") +      # if adding color, must change color label
+  theme_bw()                          # can choose any theme, but must include
 
-# OR 
+### OR 
 
+# Density plot
 ggplot(penguins, aes(bill_length_mm, fill = island)) +
   geom_density(alpha = 0.5) +
   labs(x = "Bill Length (mm)",
@@ -405,8 +424,9 @@ ggplot(penguins, aes(bill_length_mm, fill = island)) +
        fill = "Island") +
   theme_bw()
   
-# OR
+### OR
   
+# Histogram
 ggplot(penguins, aes(bill_length_mm, fill = island)) +
   geom_histogram(alpha = 0.5, position = "identity") +
   labs(x = "Bill Length (mm)",
@@ -417,29 +437,34 @@ ggplot(penguins, aes(bill_length_mm, fill = island)) +
 
 4.  Write the correct pair of statistical hypotheses for our question. (2 points)
 
-    **Null**: no difference in the mean bill length between penguins on different islands\
-    **Alternative**: true difference in the mean bill length between penguins on different islands
+    -   ***Null: No difference in the mean bill length between penguins on different islands***
+
+    -   ***Alternative: True difference in the mean bill length between penguins on different islands***
 
 5.  Run the appropriate statistical analysis for our question. (2 points)
 
 ```{r}
+# ANOVA
 aov_model <- aov(data = penguins, bill_length_mm ~ island)
+
+# Results
 summary(aov_model)
 ```
 
 6.  Interpret the results of this test. (3 points)
 
-    -   what is the p-value?
-    -   is there a significant difference?
-    -   should we reject the null hypothesis?
+    -   What is the p-value?
+    -   Is there a significant difference?
+    -   Should we reject the null hypothesis?
 
-    *Answer: yes, p = 9.21e-12, which is smaller than 0.05, reject null. penguins on different islands have significantly different beak lengths*
+    ***Answer: Yes, p = 9.21e-12, which is smaller than 0.05, reject null. penguins on different islands have significantly different beak lengths.***
 
 7.  Should we run pairwise comparisons? If no, explain why not. If yes, do so and interpret the results. (2 points)
 
-    *Answer:* yes; significant differences between all pairs except Dream-Biscoe because p \> 0.05
+    ***Answer: Yes; significant differences between all pairs except Dream-Biscoe because p \> 0.05.***
 
 ```{r}
+# Pairwise comparisons
 TukeyHSD(aov_model)
 ```
 

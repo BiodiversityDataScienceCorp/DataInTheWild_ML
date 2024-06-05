@@ -17,15 +17,15 @@ knitr::opts_chunk$set(echo = TRUE)
 
 Head over to [data-to-viz.com](https://www.data-to-viz.com/) and do some exploration! In your groups, choose one of the following types of plots. Hunt down as many locations in the flow chart where your plot type is found as you can find.
 
--   histogram: `geom_histogram()`
--   density plot: `geom_density()`
--   scatter plot: `geom_point()`
--   box-and-whisker: `geom_boxplot()` + `geom_jitter()`
+-   Histogram: `geom_histogram()`
+-   Density plot: `geom_density()`
+-   Scatter plot: `geom_point()`
+-   Box-and-whisker: `geom_boxplot()` + `geom_jitter()`
 
 If you've finished, click on your plot type and read more about it. Check out the examples that were made in R, including many using `ggplot2`. Take note of the following:
 
--   which `geom` function is being used to create the plot
--   you'll see a number of other things in the `ggplot` code, some which will be new. What are they? Any idea what they are doing?
+-   Which `geom` function is being used to create the plot
+-   You'll see a number of other things in the `ggplot` code, some which will be new. What are they? Any idea what they are doing?
 
 ## Using `geom` Functions to Make Plots
 
@@ -41,8 +41,9 @@ As we learned last modules, histograms are plots which let us look at *one conti
 
 ```{r}
 
-# we can change the number of bins (essentially, the number of columns) by modifying the bins argument in the geom_histogram function
 ```
+
+We can change the number of bins (essentially, the number of columns) by modifying the bins argument in the `geom_histogram` function.
 
 ### Density plots
 
@@ -54,21 +55,21 @@ Density plots are similar to histograms in that they show the distribution of a 
 
 ### Multiple Density Plots (or Histograms)
 
-What if we wanted to create a density plot for signal distance for each collar manufacturer? In base R, we would need to filter or make a new dataframe. With `ggplot2`, we can specify that we want the `fill` (or the `color`) to be determined by the maker column.
+What if we wanted to create a density plot for signal distance for each fish species? In base R, we would need to filter or make a new dataframe. With `ggplot2`, we can specify that we want the `fill` (or the `color`) to be determined by the maker column.
 
 ```{r}
 
 ```
 
-Hooray! But...we can't really see the bars for Budget Collars LLC in the lower range of the values because they are hidden behind the Collarium Inc. bars. How might we address this?
+Hooray! But...what about the potential overlap in tilapia and trout around 6-9?
 
-To fix this issue, we can use the `alpha` argument, which changes the transparency of the bars. The scale for `alpha` runs from 0 (completely transparent) to 1 (completely solid). Let's try 0.5.
+To fix this issue, we can use the `alpha` argument, which changes the transparency of the plots. The scale for `alpha` runs from 0 (completely transparent) to 1 (completely solid). Let's try 0.5.
 
 ```{r}
 
 ```
 
-### Multiple Histograms (with `geom_histogram()`)
+## Multiple Histograms (with `geom_histogram()`)
 
 When we create a multiple histogram, we have to add one additional argument to `geom_histogram()`. Let's see what happens if we just specify `fill`.
 
@@ -78,7 +79,7 @@ When we create a multiple histogram, we have to add one additional argument to `
 
 What is happening in the column with both green and red?
 
-Let's take a look at what happens when we change the transparency and add the argument \`position = "stacked".
+Let's take a look at what happens when we change the transparency and add the argument `position = "stacked"`.
 
 ```{r}
 

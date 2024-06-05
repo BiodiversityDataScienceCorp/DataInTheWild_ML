@@ -19,11 +19,13 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Aquaculture, Immunology, and Disease
 
-Given the correlation we found earlier, it does seem like the fish are our likely culprit.
+What is aquaculture anyway, and how might it contribute to disease?
 
 <https://docs.google.com/presentation/d/1CciKgqhu9WhS3x-YaTgEF15B0TefFhqevufThvmEfSk/edit?usp=sharing>
 
 ## Data Exploration
+
+Given the correlation we found earlier, it does seem like the fish are our likely culprit.
 
 Since we've narrowed down the issue, we should ask our aquaculture specialists to provide us with some data about the tanks.
 
@@ -39,11 +41,11 @@ Based on what we know about aquaculture systems, what types of data should we as
 
 ## Discussion of the problem
 
-Trout are a cold-water species while tilapia are a warm-water species. After doing some reading, we've come up with some critical values for each species.
+Trout are a cold-water species whereas tilapia are a warm-water species. After doing some reading, we've come up with some critical values for each species.
 
 Water temperatures below 59º F for trout and below 75º F for tilapia are critically low temperatures and can result in suppression of the immune system.
 
-Great, we now know what the critical temperature cutoffs are for both species--but there's a problem. The cut-off temperatures that we have are in Fahrenheit but the temperature values in our data frame are in Celsius.
+Great, we now know what the critical temperature cutoffs are for both species --- but there's a problem. The cut-off temperatures that we have are in Fahrenheit but the temperature values in our data frame are in Celsius.
 
 Our goal with this data is to ascertain if any of the tanks are below the critical temperature. Before we can do this, though, we need to convert tank temperatures from Celsius to Fahrenheit. Luckily for us, we've already done this before! (Hint: remember the `mutate()` function?).
 
@@ -56,6 +58,22 @@ We've already used functions a lot in this class, and it turns out that we can w
 This has lot of varied uses and can be very powerful. The key takeaway here, though, is that we can write a function that converts Celsius to Fahrenheit and apply it to our entire data set in a few lines of code.
 
 ### General Syntax Example
+
+Making a function involves creating local variables that act as a stand-in for the values you want to use later on. In the case below, our local variables are `x`, `y`, and `z`. You can see that they are local because they only circulate within the function and are not being pulled in from outside. However, once we are done defining our function we can assign values to the input variables (in this case, `x` and `y`) that the function will do its magic with. You can see this in the example chunk below, where `x = 2` and `y = 4`. All manipulations done with the input variables are contained between the curly brackets ( `{ }` ), and of course, we signify the start a function with `function()`.
+
+Function syntax follows the structure in the code chunk below, which can be viewed as:
+
+`name_of_new_function <- function(input1, input2){`
+
+`what do you want to do with your input variables? (add, subtract, etc.)`
+
+`output <- input1 + input2`
+
+`return(output)`
+
+`}`
+
+And we can see it in action here:
 
 ```{r}
 
@@ -73,7 +91,7 @@ Be prepared to show your code and run some test values.
 
 ## Thinking about Iteration
 
-So, we have a great function that we can use to convert a Celsius value to Fahrenheit, but how do we apply that to *every* value in the temperature column, not just one? We've built the function for one value, not for a vector of values...
+So, we have a great function that we can use to convert a Celsius value to Fahrenheit, but how do we apply that to *every* value in the temperature column, not just one? We've built the function for one value, not for a whole vector of values...
 
 This is where `mutate()` comes in! As we've seen in the past, `mutate()` applies whatever function or mathematical formula we've given to it to each value in the column. It essentially is going row by row: applying the function or formula to one row, returning the new value in a new column, then moving to the next row to do the same.
 
@@ -89,7 +107,7 @@ We can easily fit the equation for converting from Celsius to Fahrenheit into a 
 
 There are many different approaches to iterating in R, especially because we are typically working with vectorized data (columns in data frames). We will talk about the other options down the road. Today, we used #3, the `mutate()` function from the `tidyverse`.
 
-1.  for loops
+1.  `for` loops
 2.  `apply`/`map` functions
 3.  using `dplyr` (`tidyverse`) functions
 

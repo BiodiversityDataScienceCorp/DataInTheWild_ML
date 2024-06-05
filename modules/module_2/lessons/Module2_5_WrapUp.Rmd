@@ -51,10 +51,11 @@ Wait a second! Take a look back at the data. There is a "number of fish" column,
 
 We should probably take into account how many fish there are in the tank to begin with. 12 sick fish out of 50 is probably a bigger deal than 12 sick fish out of 100!
 
-What we need to do is calculate a density of fish--number of sick fish / number of total fish.
+What we need to do is calculate a density of fish --- number of sick fish / number of total fish.
 
 ```{r}
-# take into account the number of fish in the tank: density of sick fish
+# Take into account the number of fish in the tank: 
+# Density of sick fish
 
 ```
 
@@ -64,8 +65,8 @@ Let's make sure our conclusions about trout being the true culprits still hold w
 
 Work in small groups to do the following:
 
--   find the average number and standard deviation of sick fish for both species
--   make a plot that compares the distributions of sick fish numbers for both species (you have multiple options here!)
+-   Find the average number and standard deviation of sick fish for both species
+-   Make a plot that compares the distributions of sick fish numbers for both species (you have multiple options here!)
 
 ```{r}
 
@@ -89,7 +90,7 @@ Are those columns continuous or categorical? What plot type have we talked about
 In small groups, make plots using `density` column in the `sick_trout` data to try to figure out which environmental factor is causing problems in the trout. Treat your variables as continuous.
 
 ```{r}
-
+ 
 ```
 
 What do we think is the environmental driver causing issues with the trout?

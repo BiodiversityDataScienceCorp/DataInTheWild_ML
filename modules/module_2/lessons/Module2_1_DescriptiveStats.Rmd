@@ -16,22 +16,22 @@ knitr::opts_chunk$set(echo = TRUE)
 2.  Students will be able to generate two types of plots using base R syntax to visualize a single continuous variable (histograms and distributions) and two continuous variables (scatter plots).
 3.  Students will be able to use visual-thinking skills to create visualizations that allow them to explore patterns in data, draw inferences, and create solutions.
 
-## Introduction to the problem
+## Introduction to The Problem
 
-![](aquaponics-system.png)
+![](../assets/aquaponics-system.png)
 
 We have a wave of people getting sick across the team. People are coming in complaining of stomach sickness. Doctors have ruled out a communicable viral infection like norovirus, so it seems likely to be a food contamination issue.
 
-The two main sources of food that are grown on site and distributed to team members are [plants grown in hydroponic greenhouses](https://thespoon.tech/scientists-in-antarctica-grow-food-without-soil-or-sunlight-get-ready-mars/) (mostly Swiss chard, cucumbers and radishes) and fish (tilapia, a tolerant warm-water species, and rainbow trout, a cold-water species). The combination of aquaculture and hydroponics is called [**aquaponics**](https://docs.google.com/presentation/d/12Q1wIMO-b5ZfylHnA4dOsaLUBERtvVREzwQuO7Sc53A/edit?usp=sharing).
+The two main sources of food that are grown on site and distributed to team members are [plants grown in hydroponic greenhouses](https://thespoon.tech/scientists-in-antarctica-grow-food-without-soil-or-sunlight-get-ready-mars/) (mostly Swiss chard, cucumbers, and radishes) and fish (tilapia --- a tolerant warm-water species --- and rainbow trout --- a cold-water species). The combination of aquaculture and hydroponics is called [**aquaponics**](https://docs.google.com/presentation/d/12Q1wIMO-b5ZfylHnA4dOsaLUBERtvVREzwQuO7Sc53A/edit?usp=sharing).
 
 Team members' diets vary in composition; people are allowed to choose how much of different food sources they eat.
 
 Fortunately, we have some data we can use to investigate! We have data on the following:
 
--   which team members are sick and how many times they've gone to the doctor
--   some information about each team member, such as:
-    -   sex, age, height, occupation
-    -   how much fish and/or plant material they incorporate into their diets
+-   Which team members are sick and how many times they've gone to the doctor
+-   Some information about each team member, such as:
+    -   Sex, age, height, occupation
+    -   How much fish and/or plant material they incorporate into their diets
 
 ### Group Discussion
 
@@ -45,16 +45,16 @@ In order to begin addressing the question of what might be causing illness in ou
 
 In this course, we will be working with two types of statistics: *descriptive* and *inferential*.
 
--   **Descriptive** statistics--also called **summary** statistics--are ways of presenting, organizing, and summarizing data. Data visualization is often associated with descriptive statistics
+-   **Descriptive** statistics --- also called **summary** statistics --- are ways of presenting, organizing, and summarizing data. Data visualization is often associated with descriptive statistics
 -   **Inferential** statistics help us draw reasonable conclusions about a population based on the data we observed in a sample.
 
 In Module 2, we will be focusing exclusively on descriptive statistics and data visualization techniques.
 
 As a quick overview, descriptive statistics often include 3 elements:
 
--   *distribution* of the data
--   measures of *central tendency*: mean, median, and mode
--   measures of *variation*: range and standard deviation
+-   ***Distribution*** of the data
+-   Measures of ***central tendency***: mean, median, and mode
+-   Measures of ***variation***: range and standard deviation
 
 The slide deck with more information about descriptive statistics is linked on D2L and [here](https://docs.google.com/presentation/d/1pAnGupJqgU5t7YucGwMsbAdusoplY4GcJMdOWCic4hs/edit?usp=sharing).
 
@@ -66,7 +66,7 @@ First we're going to pull in the data and give it a quick inspection/exploration
 
 As usual, we start by calling the `tidyverse`.
 
-```{r}
+```{r, message = FALSE}
 
 ```
 

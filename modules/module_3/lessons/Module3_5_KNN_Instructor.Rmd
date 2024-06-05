@@ -25,7 +25,7 @@ Given the data we have from the collars we know were created by Budget Collars L
 
 K-nearest neighbors (KNN) is a classification algorithm (e.g., it attempts to predict labels or "classes"). It uses the classes of the nearest neighbors to a new data point (the number of neighbors = k) to predict the class of the new data point.
 
-![](nearest_neighbor.gif)
+![](../assets/nearest_neighbor.gif)
 
 You don't need to know the inner-workings of the model or even the code below; all you need to know is the overall concept of how K-nearest neighbors works and what the results mean.
 
@@ -173,7 +173,7 @@ set.seed(411)
 # Training the model and finding the best k value
 knn_training_model <- train(maker ~ ., data = training, method = "knn")
 
-# view results and find that the best k value is 5
+# View results and find that the best k value is 5
 knn_training_model
 ```
 
@@ -197,7 +197,7 @@ We will apply the same model but now to the new data.
 # Making predictions for the collars without makers
 knn_predict <- predict(knn_training_model, collars_to_label)
 
-# view results
+# View results
 knn_predict
 
 # As a table

@@ -68,15 +68,15 @@ We build the our hypotheses around our independent and dependent variables.
 
 In this case, we want to know if there is a *meaningful* (read: statistical) difference between each collar manufacturer in their average values for battery life. To start, let's identify our independent and dependent variables:
 
--   independent: maker, categorical
--   dependent: battery_life, continuous/numerical
+-   **Independent:** Maker, categorical
+-   **Dependent:** Battery_life, continuous/numerical
 
 Based on our question, we can now set up two different statistical hypotheses: the null hypothesis and the alternative hypothesis.
 
 The null hypothesis always states that there is no difference or no relationship. We can think of the null hypothesis as our starting place---this is our default assumption. The alternative hypothesis is, well, the alternative to the null hypothesis. For example:
 
--   **Null Hypothesis** ($H_{0}$): there is *no* difference in the means of battery life between the two collar makers
--   **Alternative Hypothesis** ($H_{A}$): there *is* no difference in the means of battery life between the two collar makers
+-   **Null Hypothesis** ($H_{0}$): There is *no* difference in the means of battery life between the two collar makers
+-   **Alternative Hypothesis** ($H_{A}$): There *is* no difference in the means of battery life between the two collar makers
 
 How can we determine whether we should *not reject* ("accept") or *reject* the null hypothesis? That's where statistics come in.
 
@@ -135,7 +135,7 @@ Let's talk through it:
 
 Let's quickly remind ourselves how p-values work:
 
-![](Explaining-P-values_Composite-with-labels.png)
+![](../assets/Explaining-P-values_Composite-with-labels.png)
 
 Given our very small p-value here, what can we conclude?
 
@@ -150,8 +150,8 @@ We want to know if there is a significant difference in the average signal dista
 
 1.  Identify your independent and dependent variables.
 
--   independent: maker, categorical
--   dependent: signal_distance, continuous
+-   **Independent:** maker, categorical
+-   **Dependent:** signal_distance, continuous
 
 2.  Write out your null and alternative hypotheses.
 
@@ -167,7 +167,7 @@ t.test(signal_distance ~ maker, data = collars)
 
 4.  Interpret the t-test
 
--   Is the p-value below our cut-off for significance (0.05)? *Yes, p \< 0.05*
--   Is our result statistically significant? *Yes!*
--   Does that mean we should or should not reject the null hypothesis? *REJECT*
--   So... is there a "real" difference in the means between the two companies or not? *Yes, there is a real difference*
+-   Is the p-value below our cut-off for significance (0.05)? ***Yes, p \< 0.05***
+-   Is our result statistically significant? ***Yes!***
+-   Does that mean we should or should not reject the null hypothesis? ***REJECT***
+-   So... is there a "real" difference in the means between the two companies or not? ***Yes, there is a real difference***

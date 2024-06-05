@@ -13,9 +13,9 @@ knitr::opts_chunk$set(echo = TRUE)
 
 When we are comparing data from two groups, we often want to compare the mean values of the different groups to see if there are differences. We can do this in a number of ways:
 
--   numerically (descriptive statistics)
--   visually
--   statistically (inferential statistics)
+-   Numerically (descriptive statistics)
+-   Visually
+-   Statistically (inferential statistics)
 
 In this course so far, we have done the first 2: by calculating the mean values of groups and by plotting histograms, density plots, and box-plots.
 
@@ -23,7 +23,7 @@ Today, we will be exploring the statistical side, using inferential statistics. 
 
 Let's get set-up by loading the tidyverse and reading in our data.
 
-```{r}
+```{r, message = FALSE}
 
 ```
 
@@ -63,8 +63,8 @@ We build the our hypotheses around our independent and dependent variables.
 
 In this case, we want to know if there is a *meaningful* (read: statistical) difference between each collar manufacturer in their average values for battery life. To start, let's identify our independent and dependent variables:
 
--   independent:
--   dependent:
+-   **Independent:**
+-   **Dependent:**
 
 Based on our question, we can now set up two different statistical hypotheses: the null hypothesis and the alternative hypothesis.
 
@@ -75,7 +75,7 @@ The null hypothesis always states that there is no difference or no relationship
 
 How can we determine whether we should *not reject* ("accept") or *reject* the null hypothesis? That's where statistics come in.
 
-*(Note: for reasons I won't go into, we never accept the alternative hypothesis, we only reject the null hypothesis.)*
+*(Note: For reasons I won't go into, we never accept the alternative hypothesis, we only reject the null hypothesis.)*
 
 ### Running a t-test
 
@@ -112,10 +112,10 @@ Let's talk through it:
 
 -   `t`: this is what we call the t-value, or t-statistic.
     -   Here, it is a metric of how different the difference of the two means is from 0.
-    -   Note that it doesn't correspond *directly* to the difference---it is taking into account the actual difference as well as the variation in the data sets.
+    -   Note that it doesn't correspond *directly* to the difference --- it is taking into account the actual difference as well as the variation in the data sets.
     -   Take home: big values (can be positive or negative) indicate a big difference from 0 while small values are mean the difference is close to 0.
 -   `df`: stands for *degrees of freedom*
-    -   it's a measure of your sample size and some other stuff---honestly, this is not something we're really going to focus on here
+    -   It's a measure of your sample size and some other stuff --- honestly, this is not something we're really going to focus on here.
 -   `p-value`: a measure of certainty of the difference outlined in the `t-statistic` above
     -   For the test above, our p-value is *very* small: 0.00000000000000022
         -   Wait, how did I get from `2.2e-16` to 0.00000000000000022?
@@ -129,7 +129,7 @@ Let's talk through it:
 
 Let's quickly remind ourselves how p-values work:
 
-![](Explaining-P-values_Composite-with-labels.png)
+![](../assets/Explaining-P-values_Composite-with-labels.png)
 
 Given our very small p-value here, what can we conclude?
 
@@ -144,8 +144,8 @@ We want to know if there is a significant difference in the average signal dista
 
 1.  Identify your independent and dependent variables.
 
--   independent:
--   dependent:
+-   **Independent:**
+-   **Dependent:**
 
 2.  Write out your null and alternative hypotheses.
 
@@ -163,4 +163,4 @@ We want to know if there is a significant difference in the average signal dista
 -   Is the p-value below our cut-off for significance (0.05)?
 -   Is our result statistically significant?
 -   Does that mean we should or should not reject the null hypothesis?
--   So...is there a "real" difference in the means between the two companies or not?
+-   So... is there a "real" difference in the means between the two companies or not?

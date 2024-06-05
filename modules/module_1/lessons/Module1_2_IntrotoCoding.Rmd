@@ -44,20 +44,22 @@ We can also assign more complex group of elements of the same type to a particul
 
 ```{r}
 
+
 ```
 
 ## Data classes
 
 There are a few main types in R, and they behave differently.
 
--   numeric (numbers)
-    -   integer (no decimals allowed)
-    -   double (decimals allowed---interchangeable with numeric)
--   character (letters or mixture)
--   logical (True or False; T or F)
--   factors (best used for data that need to be in a specific order; levels indicate the order)
+-   Numeric: numbers
+    -   Integer (no decimals allowed)
+    -   Double (decimals allowed --- interchangeable with numeric)
+-   Character: letters or mixture
+-   Logical: True or False; T or F
+-   Factors: best used for data that need to be in a specific order; levels indicate the order
 
 ```{r}
+
 
 ```
 
@@ -65,29 +67,33 @@ Vectors have to contain elements that are all of the same class.
 
 ```{r, eval = FALSE}
 
+
 ```
 
 ### Sub-setting Vectors
 
-Sometimes we want to pull out and work with specific values from a vector. This is called sub-setting (taking a smaller set of the original).
+Sometimes we want to pull out and work with specific values from a vector. This is called sub-setting (taking a smaller set of the original). To signify which element of the vector we'd like to pull out, we can use a square bracket and the number of the element we are interested in taking.
 
 ```{r}
+
 
 ```
 
 ## Functions
 
-**Functions** are pre-written bits of codes that perform specific tasks for us.
+**Functions** are pre-written bits of codes that perform specific tasks for us. There are ones built into R (base R), but later in the course we will see that there are more specialized ones that we can equipt using another function called `library()`.
 
 Functions are always followed by parentheses. Anything you type into the parentheses are called **arguments**.
 
 ```{r}
 
+
 ```
 
-To get more information about a function, use the `help()` function or `?name_of_function`.
+To get more information about a function, use the `help()` function or `? name_of_function`.
 
 ```{r}
+
 
 ```
 
@@ -95,20 +101,22 @@ We can use a function called `class()` to figure out the data type of a vector.
 
 ```{r}
 
+
 ```
 
 ### Group Challenge
 
 Let's practice! Write a few lines of code that do the following:
 
--   create a vector with numbers from 6 to 1 (6, 5, 4, 3, 2, 1)
--   assign the vector to an object named `vec`
--   subset `vec` to include the last 3 numbers (should include 3, 2, 1)
--   find the sum of the numbers (hint: use the `sum()` function)
+-   Create a vector with numbers from 6 to 1 (6, 5, 4, 3, 2, 1)
+-   Assign the vector to an object named `vec`
+-   Subset `vec` to include the last 3 numbers (should include 3, 2, 1)
+-   Find the sum of the numbers (hint: use the `sum()` function)
 
 Answer: 6
 
 ```{r}
+
 
 ```
 
@@ -116,20 +124,22 @@ Already finished? See if you can condense your code down any further or turn aro
 
 ```{r}
 
+
 ```
 
 ## 2-Dimensional Data: Data Frames
 
 Most of the data you will encounter is two-dimensional, i.e., it has columns and rows. Its structure resembles a spreadsheet. R is really good with these types of data.
 
--   **rows** go side-to-side
--   **columns** go up-and-down
+-   **Rows** go side-to-side
+-   **Columns** go up-and-down
 
-![](row_column.png)
+![](../assets/row_column.png)
 
 Data frames are made up of multiple vectors. Each vector becomes a column.
 
 ```{r}
+
 
 ```
 
@@ -141,21 +151,26 @@ R always takes information for the row first, then the column.
 
 ```{r}
 
+
 ```
 
 Another way to pull out a single column from a data frame is with the `$` operator. This can really come in handy when you know the name of the column but not the position.
 
 ```{r}
 
+
 ```
+
+Ideally, after typing `$`, R should give you a drop down list of all the column names that you can select from. Sometimes that doesn't happen though, and that's okay! You can also find column names / numbers by opening and looking through your data frame object in the Environment.
 
 ### Discussion Point
 
 This is a simple data set, but let's come up with some questions.
 
-Example: height of plants treated with nitrogen vs. those not treated.
+Example: Height of plants treated with nitrogen vs. those not treated.
 
 ```{r}
+
 
 ```
 
@@ -167,9 +182,10 @@ As a group, find the standard deviation (`sd()`) of the height of plants treated
 
 ```{r}
 
+
 ```
 
-Come up with a definition of standard deviation (Google is your friend!), use the help file to find out how the `sd()` function works, and be prepared to show the code you used.
+Come up with a definition of standard deviation (Google is your friend!), use the help file (`help()` or `? function`) to find out how the `sd()` function works, and be prepared to show the code you used.
 
 ## Helpful Functions
 
@@ -182,5 +198,6 @@ Below are some functions that I often find very helpful when working with vector
 -   `names()`
 
 ```{r}
+
 
 ```

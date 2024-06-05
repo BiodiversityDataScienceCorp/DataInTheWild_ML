@@ -195,7 +195,7 @@ Most of the data you will encounter is two-dimensional, i.e., it has columns and
 -   **Rows** go side-to-side
 -   **Columns** go up-and-down
 
-![](row_column.png)
+![](../assets/row_column.png)
 
 Data frames are made up of multiple vectors. Each vector becomes a column.
 
@@ -312,5 +312,3 @@ nrow(plants)
 # List of column or object names
 names(plants) 
 ```
-
-# 
