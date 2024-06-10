@@ -69,10 +69,6 @@ In many cases, this might mean capitalizing the axis label and/or legend label. 
 
 While I do not recommend using generative AI to complete this assignment (throughout the semester, I've seen it cause more problems than not...), you are allowed to use it on the final.
 
-However, you *must* do so according to the guidelines I've set out for all other assignments this semester.
-
-You can find clear examples of these guidelines on D2L in *Resources \> Helpful Info \> Assignment Reminders*.
-
 #### CAUTION!
 
 If you do use generative AI without following the course guidelines, you will receive a 0 for this final and you will not have the option to resubmit. Proceed wisely.
@@ -96,12 +92,12 @@ library(tidyverse)
 
 2.  As a reminder, there are 4 datasets that you can use to complete this final assignment:
 
-    -   krill data from KrillBase -\> `krill.csv`
-    -   fur seal pups on Maiviken Island -\> `fur_seals.csv`
+    -   Krill data from KrillBase -\> `krill.csv`
+    -   Fur seal pups on Maiviken Island -\> `fur_seals.csv`
     -   Gentoo penguins from Bird Island -\> `gentoos_and_temps.csv`
     -   Chinstrap penguins from Signy Island -\> `chinstraps_on_signy.csv`
 
-Which dataset have you chosen to work with for this final assignment? (1 point)
+Which data set have you chosen to work with for this final assignment? (1 point)
 
 ***Answer*****:**
 
@@ -119,15 +115,15 @@ Which dataset have you chosen to work with for this final assignment? (1 point)
 
 ```
 
-5.  In 1-2 sentences, explain what the output from Question 4 is telling you about your dataset. The more detail, the better. (3 points)
+5.  In 1-2 sentences, explain what the output from Question 4 is telling you about your data set. The more detail, the better. (3 points)
 
 ***Answer*****:**
 
 ### Data Exploration
 
-Now, spend some time really getting to know your dataset. Information about the datasets can be found below, both in terms of how you should treat each column (quantitative vs. qualitative) as well as at the links to the datasets below (click on the names of the datasets).
+Now, spend some time really getting to know your data set. Information about the data sets can be found below, both in terms of how you should treat each column (quantitative vs. qualitative) as well as at the links to the data sets below (click on the names of the data sets).
 
-You might notice that the data at the links has many more columns than the datasets you have been given or some slightly different data. Focus only on the columns that are in the .csv file provided to you for this assignment.
+You might notice that the data at the links has many more columns than the data sets you have been given or some slightly different data. Focus only on the columns that are in the .csv file provided to you for this assignment.
 
 #### [Krill](https://www.bas.ac.uk/project/krillbase/#data)
 
@@ -171,17 +167,17 @@ You might notice that the data at the links has many more columns than the datas
 
 In order to write a successful research question, we need to identify our dependent variable and the independent variable that we think affects the dependent variable.
 
-8.  First, determine which variable is the *dependent* variable in your dataset (there is usually only one, but there might be two). It must be quantitative. (2 points)
+8.  First, determine which variable is the *dependent* variable in your data set (there is usually only one, but there might be two). It must be quantitative. (2 points)
 
 ***Answer*****:**
 
-9.  Next, choose 1 independent variable from your dataset (each dataset has more than one from which to choose). (2 points)
+9.  Next, choose 1 independent variable from your data set (each data set has more than one from which to choose). (2 points)
 
     This should be a variable that you believe might affect the values of the dependent variable. It can be either qualitative or quantitative.
 
 ***Answer*****:**
 
-10. Now, bring your dependent and independent variables together to form a research question based on the structure presented in class in Module 1 (also see Module 1 Assignment 3). (2 points)
+10. Now, bring your dependent and independent variables together to form a research question.
 
 ***Answer*****:**
 
@@ -247,7 +243,7 @@ At least ONE of the plots should include both your dependent and independent var
 
 16. Create a box-and-whisker plot which includes your dependent variable. Changing the color of the boxes is optional. Make sure to add points to the plot. (3 points)
 
-    *Hint: if your plot has `NA` values that you want to remove, you can remove them from the dataset with the `filter` function and the argument `!is.na(column_name)`.*
+    *Hint: if your plot has `NA` values that you want to remove, you can remove them from the data set with the `filter` function and the argument `!is.na(column_name)`.*
 
 ```{r warning=FALSE}
 
@@ -255,7 +251,7 @@ At least ONE of the plots should include both your dependent and independent var
 
 17. Create a scatter plot that includes your dependent variable. Write 1-2 sentences describing what information you can gather from plot. (3 points)
 
-    *Hint: if your plot has `NA` values that you want to remove, you can remove them from the dataset with the `filter` function and the argument `!is.na(column_name)`.*
+    *Hint: if your plot has `NA` values that you want to remove, you can remove them from the data set with the `filter` function and the argument `!is.na(column_name)`.*
 
 ```{r warning=FALSE}
 
@@ -281,7 +277,7 @@ It is now time to decide how to apply these statistical analyses to your own res
 
 21. Perform the appropriate statistical analysis below. If necessary, add an additional line of code to print out the results. (3 points)
 
-    *Hint: if your dataset has `NA` values that you want to remove, you can remove them from the dataset with the `filter` function and the argument `!is.na(column_name)`.*
+    *Hint: if your data set has `NA` values that you want to remove, you can remove them from the dataset with the `filter` function and the argument `!is.na(column_name)`.*
 
 ```{r}
 
@@ -323,7 +319,7 @@ Now that you have completed the process of coming up with a research question an
 
 27. Your abstract should be structured in the following manner, with at least one sentence for each topic (6 sentence minimum):
 
--   General information about your dataset
+-   General information about your data set
 -   The research question your have chosen to ask
 -   What your data summarization told you
 -   What your data visualization shows you
