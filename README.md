@@ -1,6 +1,6 @@
-# 🐧 Data in the Wild
+# Data in the Wild: An Introductory Data Science Course for the Life Sciences
 
-## ❄️ About
+## 🐧 About
 This is a repository for the code, materials and data for *Data in the Wild* (WFSC 223), which was designed to introduce life science majors to basic programming, statistics, and machine learning. This course was developed by Drs. Katy Prudic, Jeff Oliver, Keaton Wilson, and Ellen Bledsoe at the University of Arizona. This was taught in pilot form at the University of Arizona in Spring 2020 as *Settlers of Antarctica*, and places students in the roles of Antarctic researchers navigating issues that may arise during their time in the Frozen Land. They will be tasked to use what they have learned to answer questions such as what is causing their team's stomach illness, where is the safest area to catch fish, and how to optimize a road with the least impact on the Antartic ecosystem.
 
 ## 🦭 Module Descriptions
