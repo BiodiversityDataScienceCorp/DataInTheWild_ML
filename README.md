@@ -10,7 +10,7 @@ The following is a summary and outline of each section covered in this course. W
 - _**Module 1: Mission Antarctica!**_ <br /> A new effort to establish a permanent, sustainable colony in Antarctica is being launched. Students are introduced to the field of data science and the application (RStudio, RMarkdown, Jupyter Notebooks) and programming language (R, Python) used in the course.
   - **1.1:** Introduction to RStudio
   - **1.2:** Introduction to Coding
-  - **1.3:** 2-dimensional Data and the `tidyverse` 
+  - **1.3:** 2-Dimensional Data and the `tidyverse` 
 
 - _**Module 2: Good food gone bad.**_ <br /> There is a food poisoning outbreak among team members. Students use data visualization to determine where the problem lies (fish, not plants) and simulations to determine the root of the problem (fish tank density, not fish tank temperature).
   - **2.1:** Introduction to Descriptive Statistics and Data Visualization
@@ -39,7 +39,7 @@ A sample syllabus used at the University of Arizona can be found here: [Sample C
 
 - _**`assets`**_ <br /> Images and PDFs used in lectures.
 
-- _**`assignments`**_ <br /> Assignments associated with each module. All assignments are R Markdown files that the students are expected to render and submit as a PDF. Also under this folder is a sub-folder named `assignment_keys`, which contains the student and instructor versions of the answer keys. The student version (those ending in _Student_Key) only shows what would result from the expected code. The student keys _do not_ show the code that needs to be written to achieve the correct answer, but it is offered to students as a hint towards what they should be outputting. The instructor version (those ending in _Instructor_Key) shows the code that should more or less be written in addition to the answers outputted.
+- _**`assignments`**_ <br /> Assignments associated with each module. All assignments are interactive R Markdown files that the students are expected to render and submit as a PDF. Also under this folder is a sub-folder named `assignment_keys`, which contains the student and instructor versions of the answer keys. The student version (those ending in _Student_Key) only shows what would result from the expected code. The student keys _do not_ show the code that needs to be written to achieve the correct answer, but it is offered to students as a hint towards what they should be outputting. The instructor version (those ending in _Instructor_Key) shows the code that should more or less be written in addition to the answers outputted.
 
 - _**`data`**_ <br /> Data sets used in the lectures and assignments. The data are all .csv files.
 
@@ -47,7 +47,7 @@ A sample syllabus used at the University of Arizona can be found here: [Sample C
  
 - _**`exams`**_ <br /> Exams and study guides of what students are expected to know at the conclusion of each module.
 
-- _**`lessons`**_ <br /> There are code-along formats of the lessons for the students (those _not_ ending in _Instructor), which contain the same text as the instructor version (ending in _Instructor) but with empty code blocks. The student version assumes that the instructor is live-coding with the students following along and typing (into their own document) what the instructor is presenting. There are PDF versions of the instructor version to print out and use as a guide for what to code with the students.
+- _**`lessons`**_ <br /> There are code-along formats of the lessons for the students (those _not_ ending in _Instructor), which contain the same text as the instructor version (ending in _Instructor) but with empty code blocks. The student version assumes that the instructor is live-coding with the students following along and typing (into their own document) what the instructor is presenting. There are PDF versions of the instructor version to print out and use as a guide for what to code with the students. The student versions are interactive R Markdown files, as well as the pre-PDF instructor version.
 
 - _**`scripts`**_ <br /> The code used to generate the data in the `data` folder for that module.
 
